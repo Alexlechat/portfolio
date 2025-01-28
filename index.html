@@ -3,120 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Développeur Web Freelance</title>
+    <title>Alexandre Lefranc - Étudiant 42 | Cybersécurité</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#competences">Compétences</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </nav>
+    <img src="images/wall_paper.jpg" alt="Background" class="background-image">
+    <div id="main-container">
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#accueil" class="nav-link active" data-section="accueil">Accueil</a></li>
+                <li><a href="#parcours" class="nav-link" data-section="parcours">Parcours</a></li>
+                <li><a href="#competences" class="nav-link" data-section="competences">Compétences</a></li>
+                <li><a href="#projets" class="nav-link" data-section="projets">Projets</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+        </nav>
 
-    <!-- Section Accueil -->
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <h1>Alexandre Lefranc</h1>
-            <p class="job-title">Développeur Web Freelance</p>
-            <p class="tagline">Création de sites web sur mesure</p>
-            <a href="#contact" class="cta-button">Contactez-moi</a>
-        </div>
-    </section>
+        <section id="accueil" class="section active">
+            <div class="content">
+                <h1>Alexandre Lefranc</h1>
+                <p class="job-title">Étudiant à l'École 42 | Futur Expert en Cybersécurité</p>
+                <p class="typewriter-text"></p>
+            </div>
+        </section>
 
-    <!-- Section Services -->
-    <section id="services" class="services">
-        <h2>Mes Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Développement Web</h3>
-                <p>Sites web responsive et modernes</p>
+        <section id="parcours" class="section">
+            <div class="content">
+                <h2>Mon Parcours</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Formation École 42</h3>
+                        <p>Formation intensive en programmation et développement</p>
+                        <ul>
+                            <li>Apprentissage par projets et peer-learning</li>
+                            <li>Focus sur les langages C et C++</li>
+                            <li>Développement de projets systèmes et réseaux</li>
+                            <li>Introduction à la sécurité informatique</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Reconversion Professionnelle</h3>
+                        <p>Décision de me réorienter vers l'informatique à 33 ans</p>
+                        <ul>
+                            <li>Auto-formation en programmation</li>
+                            <li>Veille technologique sur la cybersécurité</li>
+                            <li>Participation à des challenges de sécurité</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="service-card">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>Sites Responsives</h3>
-                <p>Adaptés à tous les écrans</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-search"></i>
-                <h3>SEO</h3>
-                <p>Optimisation pour les moteurs de recherche</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section Portfolio -->
-    <section id="portfolio" class="portfolio">
-        <h2>Portfolio</h2>
-        <div class="portfolio-grid">
-            <!-- Les projets seront ajoutés dynamiquement via JavaScript -->
-        </div>
-    </section>
+        <section id="competences" class="section">
+            <div class="content">
+                <h2>Compétences</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Programmation</h3>
+                        <ul>
+                            <li>C / C++</li>
+                            <li>Python</li>
+                            <li>Shell scripting</li>
+                            <li>Git</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Cybersécurité</h3>
+                        <ul>
+                            <li>Sécurité des systèmes</li>
+                            <li>Analyse de vulnérabilités</li>
+                            <li>Protocoles réseau</li>
+                            <li>Linux</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Section Compétences -->
-    <section id="competences" class="skills">
-        <h2>Compétences</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Front-end</h3>
-                <ul>
-                    <li>HTML5</li>
-                    <li>CSS3/SASS</li>
-                    <li>JavaScript</li>
-                    <li>React.js</li>
-                </ul>
+        <section id="projets" class="section">
+            <div class="content">
+                <h2>Projets École 42</h2>
+                <div class="portfolio-grid">
+                    <div class="project-card">
+                        <h3>libft</h3>
+                        <p>Recréation de fonctions de la librairie C standard</p>
+                        <p class="tech">C, Gestion mémoire</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>ft_printf</h3>
+                        <p>Implémentation de printf</p>
+                        <p class="tech">C, Parsing, Variadic functions</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>born2beroot</h3>
+                        <p>Configuration sécurisée d'un serveur Linux</p>
+                        <p class="tech">Linux, Sécurité système</p>
+                    </div>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3>Back-end</h3>
-                <ul>
-                    <li>PHP</li>
-                    <li>Node.js</li>
-                    <li>MySQL</li>
-                    <li>WordPress</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section Contact -->
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <form id="contact-form">
-            <div class="form-group">
-                <input type="text" id="name" name="name" required placeholder="Votre nom">
+        <section id="contact" class="section">
+            <div class="content">
+                <h2>Contact</h2>
+                <p>Je suis à la recherche d'opportunités en cybersécurité. N'hésitez pas à me contacter pour échanger sur vos besoins.</p>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder="Nom">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" required placeholder="Message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Envoyer</button>
+                </form>
             </div>
-            <div class="form-group">
-                <input type="email" id="email" name="email" required placeholder="Votre email">
-            </div>
-            <div class="form-group">
-                <textarea id="message" name="message" required placeholder="Votre message"></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Envoyer</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-            <p>&copy; 2025 Portfolio Développeur. Tous droits réservés.</p>
-        </div>
-    </footer>
+        </section>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
