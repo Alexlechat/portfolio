@@ -55,6 +55,32 @@ function handleScrollAnimation() {
     });
 }
 
+// ----------- CONTACT FORM EMAILJS -----------
+// TODO: Remplace 'YOUR_USER_ID' ci-dessous par ton vrai User ID EmailJS
+emailjs.init('YOUR_USER_ID');
+
+document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            formMessage.textContent = 'Envoi en cours...';
+            // TODO: Remplace 'YOUR_SERVICE_ID' et 'YOUR_TEMPLATE_ID' par tes vrais IDs EmailJS
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', contactForm)
+                .then(function() {
+                    formMessage.style.color = 'green';
+                    formMessage.textContent = 'Message envoyé ! Merci pour votre contact.';
+                    contactForm.reset();
+                }, function(error) {
+                    formMessage.style.color = 'red';
+                    formMessage.textContent = 'Erreur lors de l\'envoi. Merci de réessayer.';
+                });
+        });
+    }
+});
+// ----------- CONTACT FORM EMAILJS -----------
+
 // Navigation mobile
 function setupMobileNav() {
     const burger = document.querySelector('.burger');
