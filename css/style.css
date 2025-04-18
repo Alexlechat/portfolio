@@ -25,6 +25,7 @@ body {
     color: var(--text-color);
     position: relative;
     overflow: hidden !important;
+    min-height: 120vh;
 }
 
 .background-image {
@@ -73,22 +74,23 @@ body {
 }
 
 .nav-link {
-    font-size: 16px;
+    font-size: 1.35em;
     text-decoration: none;
     color: var(--text-color);
-    padding: 4px 8px;
+    padding: 8px 14px;
     display: block;
     opacity: 0.5;
-    transition: all 0.3s ease;
+    transition: transform 0.22s cubic-bezier(.4,1.7,.8,.8), color 0.3s, background 0.3s, font-weight 0.22s;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 700;
 }
 
 .nav-link:hover,
 .nav-link.active {
     opacity: 1;
-    transform: scale(1.1);
-    font-weight: 700;
+    transform: scale(1.18);
+    font-weight: 800;
 }
 
 .nav-link::before {
@@ -110,15 +112,17 @@ body {
 .section {
     display: none;
     min-height: 100vh;
-    padding: var(--spacing-unit);
-    padding-left: 120px;
+    padding: calc(var(--spacing-unit) * 2) 0 calc(var(--spacing-unit) * 2) 120px;
     background: rgba(255, 255, 255, 0.9);
+    font-size: 1.35rem;
 }
 
 .section.active {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 @keyframes fadeIn {
@@ -128,40 +132,45 @@ body {
 
 /* Content Styles */
 .content {
-    max-width: 800px;
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 60px 48px;
+    font-size: 1.18em;
 }
 
 h1 {
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 68px;
+    font-weight: 900;
     margin-bottom: var(--spacing-unit);
     letter-spacing: 1px;
 }
 
 h2 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 48px;
+    font-weight: 900;
     margin-bottom: var(--spacing-unit);
     letter-spacing: 0.5px;
     text-transform: none;
 }
 
 p {
-    font-size: 14px;
+    font-size: 1.18em;
     margin-bottom: var(--spacing-unit);
-    max-width: 600px;
+    max-width: 800px;
 }
 
 
 /* Portfolio Grid */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: var(--spacing-unit);
-    max-width: 1000px;
+    max-width: 700px;
+    min-height: 420px;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 .project-card, .skill-card {
@@ -170,6 +179,10 @@ p {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
+    width: 350px;
+    min-width: 350px;
+    max-width: 350px;
+    box-sizing: border-box;
 }
 
 .project-card:hover, .skill-card:hover {
@@ -179,15 +192,18 @@ p {
 }
 
 .project-card h3, .skill-card h3 {
-    font-size: 16px;
-    font-weight: normal;
-    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
 }
 
 .project-card .tech {
-    font-size: 12px;
-    opacity: 0.7;
-    margin-top: 10px;
+    font-size: 1.2em;
+    opacity: 0.8;
+    margin-top: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 /* Timeline */
@@ -240,9 +256,12 @@ p {
 /* Skills */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-unit);
-    max-width: 600px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 1em;
 }
 
 .skill-card ul {
@@ -250,8 +269,8 @@ p {
 }
 
 .skill-card li {
-    margin-bottom: 8px;
-    font-size: 14px;
+    margin-bottom: 12px;
+    font-size: 1.25em;
     position: relative;
     padding-left: 20px;
 }
@@ -264,6 +283,14 @@ p {
 }
 
 /* Contact Section */
+#accueil .content {
+    font-size: 1.25em;
+}
+
+#accueil .content p {
+    font-size: 1.22em;
+}
+
 .contact .content {
     max-width: 600px;
 }
@@ -343,9 +370,9 @@ textarea {
 }
 
 .job-title {
-    font-size: 20px;
+    font-size: 2em;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     letter-spacing: 0.5px;
 }
 
@@ -383,9 +410,10 @@ textarea {
 /* Typewriter effect */
 .typewriter-text {
     font-size: 16px;
-    margin: 20px 0;
+    margin: 50px 0 20px 0;
     min-height: 80px;
     position: relative;
+    text-align: justify;
 }
 
 .cursor {
@@ -571,16 +599,31 @@ footer {
     margin-bottom: 2.1rem;
 }
 .cv-section.cv-skills {
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.25em;
+    padding: 0;
 }
 .cv-section strong {
-    font-size: 1.35rem;
+    font-size: 2rem;
     color: var(--accent-color);
     letter-spacing: 0.5px;
-    font-weight: 700;
+    font-weight: 800;
     display: block;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.5em;
+    text-align: left;
+    margin-left: 0;
 }
+
+#text-parcours {
+    font-size: 1.1em;
+}
+
+.cv-section p, .cv-section ul, .cv-section li, .cv-exp-item, .cv-edu-item, .cv-lang {
+    text-align: left !important;
+    margin-left: 0 !important;
+    font-size: 1.32em;
+}
+
 .cv-skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -593,34 +636,97 @@ footer {
     background: #f5f5f5;
     border-radius: 8px;
     padding: 0.3rem 0.9rem;
-    font-size: 0.99rem;
+    font-size: 0.5em;
     color: #222;
     box-shadow: 0 1px 3px rgba(0,0,0,0.03);
 }
 .cv-exp-item {
     margin-top: 0.4rem;
     margin-bottom: 0.4rem;
-    font-size: 0.99rem;
+    font-size: 1.5rem;
 }
 .cv-exp-title {
     font-weight: 600;
     color: var(--accent-color);
+	font-size: 1.6rem;
 }
 .cv-exp-desc {
     color: #444;
-    font-size: 0.97rem;
+    font-size: 1.2rem;
 }
 .cv-edu-item {
     margin-top: 0.2rem;
-    font-size: 0.97rem;
+    font-size: 1.15rem;
 }
 .cv-lang {
-    font-size: 0.97rem;
+    font-size: 1.13rem;
     color: #444;
 }
 @media (max-width: 900px) {
+    /* Réduction des paddings et adaptation des sections */
     .cv-box {
         padding: 1.2rem 1rem 1rem 1rem;
+    }
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        max-width: 98vw;
+        min-height: unset;
+    }
+    .project-card, .skill-card {
+        width: 90vw;
+        min-width: 0;
+        max-width: 100vw;
+        margin: 0 auto;
+    }
+    .content {
+        padding: 30px 6vw;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    .cv-section strong {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .cv-box {
+        padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+        font-size: 0.97rem;
+    }
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        max-width: 100vw;
+    }
+    .project-card, .skill-card {
+        width: 98vw;
+        min-width: 0;
+        max-width: 100vw;
+        margin: 0 auto;
+        padding: 1rem 0.5rem;
+    }
+    .content {
+        padding: 16px 2vw;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+    .cv-section strong {
+        font-size: 1rem;
+    }
+    .nav-links {
+        gap: 8px;
+    }
+    .navbar {
+        left: 0;
+        padding: 0;
     }
 }
 @media (max-width: 600px) {
