@@ -640,6 +640,7 @@ footer {
     color: #222;
     box-shadow: 0 1px 3px rgba(0,0,0,0.03);
 }
+
 .cv-exp-item {
     margin-top: 0.4rem;
     margin-bottom: 0.4rem;
@@ -658,6 +659,7 @@ footer {
     margin-top: 0.2rem;
     font-size: 1.15rem;
 }
+
 .cv-lang {
     font-size: 1.13rem;
     color: #444;
