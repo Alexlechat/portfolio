@@ -1,9 +1,13 @@
 /* Variables */
 :root {
-    --primary-color: #4a6fa5;
-    --secondary-color: #333;
-    --light-color: #f4f4f4;
+    --primary-color: #1B4332;
+    --secondary-color: #0B0B0B;
+	--color-1: #2D6A4F;
+	--color-2: #0c8b45;
+	--color-3: #9c5619;
+    --light-color: #e5e2d5;
     --dark-color: #333;
+	--button-color: #333;
     --max-width: 1200px;
     --transition: all 0.3s ease;
 }
@@ -20,7 +24,7 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--dark-color);
-    background-color: #fff;
+    background-color: #e5e2d5;
     overflow-x: hidden;
 }
 
@@ -50,6 +54,17 @@ ul {
     font-size: 2.5rem;
     position: relative;
     color: var(--secondary-color);
+}
+
+.sub-bar {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 1px;
+    background-color: #c3c1b4;
 }
 
 .section-title::after {
@@ -163,7 +178,7 @@ ul {
     height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../jungle.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -242,10 +257,26 @@ ul {
 }
 
 .skill-level {
-    height: 100%;
-    background-color: var(--primary-color);
-    border-radius: 5px;
+	height: 100%;
+	border-radius: 5px;
+	background-color: grey; /* fallback */
 }
+
+  /* C spécifique */
+.skill-list li:nth-child(1) .skill-level {
+	background-color: var(--color-1);
+}
+
+  /* Linux spécifique */
+.skill-list li:nth-child(2) .skill-level {
+	background-color: var(--color-2);
+}
+
+  /* Bash spécifique */
+.skill-list li:nth-child(3) .skill-level {
+	background-color: var(--color-3);
+}
+
 
 .soft-skills {
     display: flex;
