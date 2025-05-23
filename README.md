@@ -1,64 +1,54 @@
-# Portfolio Développeur Web Freelance
+# Portfolio Professionnel - Alexandre Lefranc
 
-Ce portfolio est un site web moderne et responsive conçu pour mettre en valeur vos compétences et projets en tant que développeur web freelance.
+Un site portfolio professionnel responsive en une seule page avec défilement vertical, conçu pour mettre en valeur mon profil et mes compétences pour des postes en cybersécurité, algorithmie ou intelligence artificielle.
 
-## Fonctionnalités
+## Caractéristiques
 
-- Design moderne et responsive
-- Navigation fluide
-- Sections : Accueil, Services, Portfolio, Compétences, Contact
+- Design épuré et moderne
+- Site entièrement responsive (mobile et desktop)
+- Navigation fluide avec défilement doux
+- Barre de navigation fixe avec liens d'ancrage
 - Animations au défilement
 - Formulaire de contact
-- Intégration des réseaux sociaux
-- Compatible avec tous les navigateurs modernes
+
+## Structure du site
+
+- **Profil** : Présentation personnelle et professionnelle
+- **Compétences** : Langages, technologies, langues et soft skills
+- **Projets 42** : Galerie de projets réalisés à l'École 42
+- **Parcours professionnel** : Expérience professionnelle présentée sous forme de timeline
+- **Formation** : Parcours académique
+- **Centres d'intérêt** : Sports et voyages
+- **Contact** : Informations de contact et formulaire
+
+## Technologies utilisées
+
+- HTML5
+- CSS3 (avec variables, flexbox et grid)
+- JavaScript (vanilla)
+- Font Awesome pour les icônes
+- Google Fonts pour la typographie
+
+## Comment visualiser le site
+
+Ouvrez simplement le fichier `index.html` dans votre navigateur web préféré.
+
+```bash
+# Si vous avez Python installé, vous pouvez lancer un serveur local
+python -m http.server
+
+# Ou avec Node.js
+npx serve
+```
 
 ## Personnalisation
 
-### Images
-1. Placez vos images de projets dans le dossier `images/`
-2. Modifiez les chemins d'accès dans `js/main.js`
-3. Remplacez l'image d'arrière-plan de la section héro dans `css/style.css`
+Pour personnaliser ce portfolio :
 
-### Contenu
 1. Modifiez le contenu dans `index.html`
-2. Personnalisez les projets dans `js/main.js`
-3. Ajustez les compétences dans la section correspondante
-
-### Style
-- Les couleurs principales peuvent être modifiées dans les variables CSS (`:root`) dans `css/style.css`
-- La police et autres styles peuvent être personnalisés dans `css/style.css`
-
-## Installation
-
-1. Clonez ce dépôt
-2. Personnalisez le contenu selon vos besoins
-3. Déployez sur votre hébergement web
-
-## Technologies Utilisées
-
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-- Font Awesome pour les icônes
-
-## Structure des Fichiers
-
-```
-portfolio-dev/
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── main.js
-├── images/
-└── README.md
-```
-
-## Contribution
-
-N'hésitez pas à proposer des améliorations ou à signaler des bugs en ouvrant une issue.
+2. Ajustez les styles dans `css/style.css`
+3. Personnalisez les interactions dans `js/script.js`
 
 ## Licence
 
-Ce projet est sous licence MIT. Vous êtes libre de l'utiliser et de le modifier selon vos besoins.
-# portfolio
+Ce projet est disponible sous licence MIT.

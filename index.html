@@ -3,213 +3,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexandre Lefranc - Étudiant 42 | Cybersécurité</title>
+    <title>Alexandre Lefranc - Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <img src="images/wall_paper.jpg" alt="Background" class="background-image">
-    <div id="main-container">
-        <nav class="navbar">
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <h1 class="logo">Alexandre Lefranc</h1>
             <ul class="nav-links">
-                <li><a href="#accueil" class="nav-link active" data-section="accueil">Accueil</a></li>
-                <li><a href="#parcours" class="nav-link" data-section="parcours">Parcours</a></li>
-                <li><a href="#competences" class="nav-link" data-section="competences">Compétences</a></li>
-                <li><a href="#projets" class="nav-link" data-section="projets">Projets</a></li>
-                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#parcours">Parcours</a></li>
+                <li><a href="#formation">Formation</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-
-        <section id="accueil" class="section active">
-            <div class="content">
-                <h1>Alexandre Lefranc</h1>
-                <p class="job-title">Étudiant à l'École 42 | Futur Expert en Cybersécurité</p>
-                <p class="typewriter-text"></p>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
             </div>
-        </section>
+        </div>
+    </nav>
 
-        <section id="parcours" class="section">
-            <div class="content">
+    <!-- Hero Section -->
+    <header id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Alexandre Lefranc</h1>
+                <h2>Développeur & Cybersécurité</h2>
+                <p>Étudiant à l'École 42 | Passionné par la sécurité informatique et l'IA</p>
+                <a href="#contact" class="btn">Me contacter</a>
+            </div>
+        </div>
+    </header>
 
-                <div class="cv-header">
-                    <div class="cv-summary"></div>
+    <!-- Profil Section -->
+    <section id="profil" class="section">
+        <div class="container">
+            <h2 class="section-title">Profil</h2>
+            <div class="profil-content">
+                <div class="profil-text">
+                    <p>En reconversion professionnelle, je suis actuellement étudiant à l'École 42 où je développe mes compétences en programmation et en architecture réseau. Passionné par la cybersécurité, l'algorithmie et l'intelligence artificielle, je cherche à mettre à profit mon expérience antérieure en analyse financière et ma curiosité technique au service de projets innovants.</p>
+                    <p>Mon parcours atypique m'a permis de développer une forte capacité d'adaptation et une approche analytique des problèmes, compétences que je mets désormais au service du développement informatique.</p>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="cv-section cv-skills">
-                    <strong>Compétences clés :</strong>
-                    <ul class="cv-skills-list">
-                    	<li>Cybersécurité</li>
-                    	<li>Linux</li>
-                    	<li>Shell scripting</li>
-                    	<li>Git</li>
-                    	<li>Algorithmie</li>
-                    	<li>Analyse de vulnérabilités</li>
-                    	<li>Gestion de projet</li>
+    <!-- Compétences Section -->
+    <section id="competences" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Compétences</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Langages & Technologies</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">C</span><div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div></li>
+                        <li><span class="skill-name">Bash</span><div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div></li>
+                        <li><span class="skill-name">Linux</span><div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div></li>
                     </ul>
                 </div>
-
-                <br>
-                <br>
-                <div class="cv-section cv-exp">
-                    <strong>Expérience professionnelle :</strong>
-                    <div class="cv-exp-item">
-                    	<span class="cv-exp-title">Voyage</span> 
-						<span class="cv-exp-subtitle">– Nouvelle-Zélande, Australie, Colombie (2019 - 2024)</span><br>
-                    	<span class="cv-exp-desc">Adaptabilité et autonomie : Séjour de 5 ans à l'international, avec des expériences dans divers secteurs (industrie minière, construction, pêche). Développement d'une grande autonomie, gestion des priorités, acquisition de compétences en gestion de projets divers.</span>
-                    </div>
-                    <div class="cv-exp-item">
-                    	<span class="cv-exp-title">Analyste Financier</span> 
-						<span class="cv-exp-subtitle">– LIMAGRAIN EUROPE, Clermont-Ferrand, (2018 - 2019)</span><br>
-                    	<span class="cv-exp-desc">Consolidation financière, reporting IFRS, automatisation VBA, gestion de données sensibles.</span>
-                    </div>
-                    <div class="cv-exp-item">
-                    	<span class="cv-exp-title">Analyste Financier</span> 
-						<span class="cv-exp-subtitle">– LA POSTE IMMOBILIER, Paris (2015 - 2016)<span><br>
-                    	<span class="cv-exp-desc">Développement de tableaux de bord, contrôle de gestion, analyse financière, optimisation des coûts.</span>
-                    </div>
-                    <div class="cv-exp-item">
-                    	<span class="cv-exp-title">Analyste Financier</span>
-						<span class="cv-exp-subtitle"> – CAPGEMINI, Paris (2014 - 2015)<span><br>
-                    	<span class="cv-exp-desc">Contrôle opérationnel, gestion de facturation SAP, suivi projets, gestion d’équipe internationale.</span>
-                    </div>
+                <div class="skill-category">
+                    <h3>Langues</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">Français</span><div class="skill-bar"><div class="skill-level" style="width: 100%"></div></div></li>
+                        <li><span class="skill-name">Anglais (Bilingue)</span><div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div></li>
+                        <li><span class="skill-name">Espagnol (Intermédiaire)</span><div class="skill-bar"><div class="skill-level" style="width: 60%"></div></div></li>
+                    </ul>
                 </div>
-
-                <br>
-                <br>
-                <div class="cv-section cv-edu">
-                    <strong>Formation :</strong>
-                    <div class="cv-edu-item">
-						<span class="cv-exp-title">École 42 Lyon</span> 
-						<span class="cv-exp-subtitle">– Développeur Logiciel | Architecte Réseaux (nov. 2024 - sept. 2026)</span>
-					</div>
-                    <div class="cv-edu-item">
-						<span class="cv-exp-title">ESC Clermont Business School</span> 
-						<span class="cv-exp-subtitle">– Master Management & Finance (2013 - 2016)</span>
-					</div>
-                    <div class="cv-edu-item">
-						<span class="cv-exp-title">Tecnológico de Monterrey</span> 
-						<span class="cv-exp-subtitle">– Master Économie de gestion (2015)</span>
-					</div>
-                    <div class="cv-edu-item">
-						<span class="cv-exp-title">Université de Rennes</span> 
-						<span class="cv-exp-subtitle">– DUT Gestion administrative & commerciale (2012 - 2013)</span>
-					</div>
-                </div>
-				<br>
-                <br>
-                <div class="cv-section cv-lang">
-                    <strong>Langues :</strong> Français (natif), Anglais (professionnel), Espagnol (professionnel)
-                </div>
-            </div>
-        </section>
-
-        <section id="competences" class="section">
-            <div class="content">
-                <h2>Compétences</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>Programmation</h3>
-                        <ul>
-                            <li>C / C++</li>
-                            <li>Linux</li>
-                            <li>Shell scripting</li>
-                            <li>Git</li>
-                        </ul>
-                    </div>
-					<div class="skill-card">
-                        <h3>Cybersécurité</h3>
-                        <ul>
-                            <li>Sécurité des systèmes</li>
-                            <li>Linux</li>
-                        </ul>
-                    </div>
-					<div class="skill-card">
-                        <h3>Finance</h3>
-                        <ul>
-                            <li>Consolidation</li>
-                            <li>Comptabilité internationale</li>
-							<li>Budgetisation</li>
-							<li>Analyse de la performance</li>
-                        </ul>
-                    </div>
-					<div class="skill-card">
-                        <h3>Soft skills</h3>
-                        <ul>
-                            <li>Résolution de problèmes</li>
-                            <li>Travail en équipe</li>
-							<li>Curiosité et apprentissage continu</li>
-							<li>Autonomie</li>
-                        </ul>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="soft-skills">
+                        <span class="soft-skill">Résolution de problèmes</span>
+                        <span class="soft-skill">Travail en équipe</span>
+                        <span class="soft-skill">Curiosité</span>
+                        <span class="soft-skill">Apprentissage continu</span>
+                        <span class="soft-skill">Adaptabilité</span>
+                        <span class="soft-skill">Analyse</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="projets" class="section">
-            <div class="content">
-                <h2>Projets École 42</h2>
-                <div class="portfolio-grid">
-    <div class="project-card">
-        <h3>libft</h3>
-        <p>Recréation de fonctions de la librairie C standard</p>
-        <p class="tech">C, Gestion mémoire</p>
-    </div>
-    <div class="project-card">
-        <h3>ft_printf</h3>
-        <p>Implémentation de printf</p>
-        <p class="tech">C, Parsing, Variadic functions</p>
-    </div>
-    <div class="project-card">
-        <h3>born2beroot</h3>
-        <p>Configuration sécurisée d'un serveur Linux</p>
-        <p class="tech">Linux, Sécurité système</p>
-    </div>
-    <div class="project-card">
-        <h3>minishell</h3>
-        <p>Réalisation d'un shell Unix minimal en C : parsing, exécution de commandes, redirections, pipes, gestion des signaux.</p>
-        <p class="tech">C, Unix, Processus, Parsing, Shell</p>
-    </div>
-
+    <!-- Projets Section -->
+    <section id="projets" class="section">
+        <div class="container">
+            <h2 class="section-title">Projets 42</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Libft</h3>
+                        <p>Recréation d'une bibliothèque de fonctions C standard pour une utilisation dans les projets futurs.</p>
+                        <div class="project-tech">
+                            <span>C</span>
+                            <span>Makefile</span>
+                        </div>
+                        <a href="https://github.com/username/libft" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Voir sur GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>ft_printf</h3>
+                        <p>Implémentation personnelle de la fonction printf de la libc.</p>
+                        <div class="project-tech">
+                            <span>C</span>
+                            <span>Variadic Functions</span>
+                        </div>
+                        <a href="https://github.com/username/ft_printf" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Voir sur GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Born2beroot</h3>
+                        <p>Configuration d'une machine virtuelle sécurisée sous Debian avec services système.</p>
+                        <div class="project-tech">
+                            <span>Linux</span>
+                            <span>Bash</span>
+                            <span>Sécurité</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Push_swap</h3>
+                        <p>Algorithme de tri optimisé pour trier des données avec un nombre limité d'opérations.</p>
+                        <div class="project-tech">
+                            <span>C</span>
+                            <span>Algorithmie</span>
+                            <span>Structures de données</span>
+                        </div>
+                        <a href="https://github.com/username/push_swap" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Voir sur GitHub
+                        </a>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="section">
-            <div class="content">
-                <h2>Contact</h2>
-                <p>Je suis à la recherche d'opportunités en cybersécurité. N'hésitez pas à me contacter pour échanger sur vos besoins.</p>
-				<form action="https://formspree.io/f/mjkwbrev" method="POST">
-					<label>
-						Your name:
-						<input type="text" name="email">
-					</label>
-					<label>
-				    	Votre email:
-				    	<input type="email" name="email">
-					</label>
-					<label>
-				    	Votre message:
-				    	<textarea name="message"></textarea>
-					</label>
-					<button type="submit">envoi</button>
-				</form>
+    <!-- Parcours Section -->
+    <section id="parcours" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Parcours professionnel</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Analyste Financier</h3>
+                        <h4>Capgemini</h4>
+                        <p class="timeline-date">2018 - 2022</p>
+                        <p>Analyse financière et reporting pour des clients grands comptes. Optimisation des processus d'analyse de données.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Analyste Financier</h3>
+                        <h4>La Poste</h4>
+                        <p class="timeline-date">2015 - 2018</p>
+                        <p>Gestion des budgets et analyse des performances financières. Mise en place d'outils d'automatisation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Analyste Financier Junior</h3>
+                        <h4>Limagrain</h4>
+                        <p class="timeline-date">2013 - 2015</p>
+                        <p>Support aux équipes financières et participation aux clôtures comptables.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Pause professionnelle internationale</h3>
+                        <p class="timeline-date">2022 - 2023</p>
+                        <p>Gestion de projets variés à l'international, développement de compétences transversales et découverte de nouvelles cultures.</p>
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script src="js/main.js"></script>
-    <div class="social-footer">
-    	<a href="https://github.com/Alexlechat" class="footer-btn" target="_blank" rel="noopener" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-    	</a>
-    	<a href="https://www.codewars.com/users/Alexlechat" class="footer-btn" target="_blank" rel="noopener" aria-label="Codewars">
-        <img src="images/codewar.png" alt="Codewars" style="width:22px;height:22px;display:block;margin:auto;border-radius:4px;background:transparent;" />
-    	</a>
-    	<a href="https://www.linkedin.com/in/alexandre-lefranc-4179835b/" class="footer-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-    	</a>
-    </div>
+    <!-- Formation Section -->
+    <section id="formation" class="section">
+        <div class="container">
+            <h2 class="section-title">Formation</h2>
+            <div class="education-container">
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Développement & Architecture réseau</h3>
+                        <h4>École 42</h4>
+                        <p class="education-date">2024 - en cours</p>
+                        <p>Formation par projets en programmation, algorithmie et architecture système.</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Master en Management</h3>
+                        <h4>ESC Clermont</h4>
+                        <p class="education-date">2011 - 2013</p>
+                        <p>Spécialisation en finance d'entreprise et contrôle de gestion.</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Échange universitaire</h3>
+                        <h4>Tecnológico de Monterrey</h4>
+                        <p class="education-date">2012</p>
+                        <p>Semestre d'études au Mexique, spécialisation en finance internationale.</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>DUT Gestion des Entreprises et des Administrations</h3>
+                        <h4>IUT Clermont-Ferrand</h4>
+                        <p class="education-date">2009 - 2011</p>
+                        <p>Formation en comptabilité, finance et gestion d'entreprise.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Centres d'intérêt Section -->
+    <section id="interets" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Centres d'intérêt</h2>
+            <div class="interests-container">
+                <div class="interest-category">
+                    <h3><i class="fas fa-dumbbell"></i> Sports</h3>
+                    <ul>
+                        <li>Muay Thaï</li>
+                        <li>Natation</li>
+                    </ul>
+                </div>
+                <div class="interest-category">
+                    <h3><i class="fas fa-plane"></i> Voyages</h3>
+                    <ul>
+                        <li>Australie</li>
+                        <li>Nouvelle-Zélande</li>
+                        <li>Colombie</li>
+                        <li>Mexique</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>alexandre.lefranc@example.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+33 6 12 34 56 78</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <p><a href="https://www.linkedin.com/in/alexandrelefranc" target="_blank">linkedin.com/in/alexandrelefranc</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Lyon, France</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-id-card"></i>
+                        <p>Permis B</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Alexandre Lefranc. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
