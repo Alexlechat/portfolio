@@ -3,17 +3,81 @@ const navbar = document.getElementById('navbar');
 const navLinks = document.querySelector('.nav-links');
 const burger = document.querySelector('.burger');
 const sections = document.querySelectorAll('.section');
-const contactForm = document.getElementById('contactForm');
+const contactForm = document.querySelector('.contact-form form');
+
+// Variables for navbar scroll behavior
+let lastScrollTop = 0;
+let isMouseNearNavbar = false;
+let navbarHeight = navbar.offsetHeight;
+let navbarTimeout;
+
+// Navbar hover detection
+const navbarHoverArea = 60; // Pixels from top where navbar should appear
+
+// Function to show navbar
+function showNavbar() {
+    navbar.classList.remove('navbar-hidden');
+    navbar.classList.add('navbar-visible');
+}
+
+// Function to hide navbar
+function hideNavbar() {
+    if (!isMouseNearNavbar) {
+        navbar.classList.remove('navbar-visible');
+        navbar.classList.add('navbar-hidden');
+    }
+}
+
+// Detect mouse position for navbar
+document.addEventListener('mousemove', (e) => {
+    // If mouse is near the top of the screen
+    if (e.clientY <= navbarHoverArea) {
+        isMouseNearNavbar = true;
+        showNavbar();
+        
+        // Clear any existing timeout
+        clearTimeout(navbarTimeout);
+    } else {
+        isMouseNearNavbar = false;
+        
+        // Set a small delay before potentially hiding the navbar
+        // to prevent it from disappearing immediately when mouse leaves
+        clearTimeout(navbarTimeout);
+        navbarTimeout = setTimeout(() => {
+            if (window.scrollY > 100 && !isMouseNearNavbar) {
+                hideNavbar();
+            }
+        }, 500);
+    }
+});
 
 // Scroll Event for Navbar
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    
+    // Change navbar style based on scroll position
+    if (scrollTop > 100) {
         navbar.style.background = 'rgba(255, 255, 255, 0.98)';
         navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        
+        // Determine scroll direction
+        if (scrollTop > lastScrollTop && scrollTop > navbarHeight) {
+            // Scrolling DOWN and not at the top
+            if (!isMouseNearNavbar) {
+                hideNavbar();
+            }
+        } else {
+            // Scrolling UP
+            showNavbar();
+        }
     } else {
+        // At the top of the page
         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
         navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        showNavbar();
     }
+    
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
 });
 
 // Burger Menu Toggle
