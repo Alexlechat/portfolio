@@ -3,13 +3,14 @@
     /* Vos couleurs spécifiques */
     --color-primary-dark: #18534F;   /* Dark Teal (Titres, Texte Principal) */
     --color-accent-medium: #226D68;  /* Cyan/Teal Medium (Liens, Timeline Dots, Bordures) */
-    --color-subtle-bg: #ECF8F6;      /* Ocre/Jaune doré (Fond de la section Hero) */
-    --color-secondary-warm: #FEEAA1; /* Orange vif (Boutons GitHub) */
+    --color-subtle-bg: #D6955B;      /* Ocre/Jaune doré (Fond de la section Hero) */
+    --color-secondary-warm: #6A645A; /* Orange vif (Boutons GitHub) */
     --color-tertiary-strong: #D6955B;/* Rouge-Orange (Survol des boutons) */
-    
+    --color-primary-hero: #ECF8F6;
+
     /* Couleurs neutres pour la lisibilité */
     --text-color: #333; 
-    --background-color: #F8F9FA; /* Fond principal très clair */
+    --background-color: #6A645A; /* Fond principal très clair */
     --card-background: #ffffff;
     --border-color: #eee;
 }
@@ -97,20 +98,20 @@ h2 {
 .hero-section {
     text-align: center;
     padding: 100px 20px 80px;
-    background-color: var(--color-subtle-bg); /* Fond en Ocre */
+    background-image: url("../image/jungle.jpg");
     margin-top: 0;
     box-shadow: none;
 }
 
 .hero-section h1 {
     font-size: 3.5em;
-    color: var(--color-primary-dark);
+    color: var(--color-primary-hero);
     margin-bottom: 10px;
 }
 
 .hero-section p {
     font-size: 1.5em;
-    color: var(--color-primary-dark);
+    color: var(--color-primary-hero);
     font-weight: 300;
 }
 
