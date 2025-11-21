@@ -39,9 +39,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
-    padding-top: 80px; /* Increased slightly to accommodate larger navbar text */
-    
-    /* Apply base font size globally */
+    padding-top: 80px; /* Space for fixed navbar */
     font-size: var(--font-size-base);
 }
 
@@ -61,17 +59,66 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centered on Desktop */
+    align-items: center;
     padding: 20px 20px;
+    position: relative; /* Essential for mobile positioning */
+}
+
+/* --- Mobile Burger Styles (Hidden on Desktop) --- */
+.nav-toggle {
+    display: none; /* Always hide the checkbox input */
+}
+
+.nav-toggle-label {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Hamburger lines styling */
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: var(--color-primary-dark);
+    height: 3px;
+    width: 30px;
+    border-radius: 2px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 8px;
+}
+
+.nav-toggle-label span::after {
+    top: 8px;
+}
+
+/* --- Navigation Links --- */
+.nav-links {
+    display: flex;
+    gap: 20px;
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--color-primary-dark);
     font-weight: 600;
-    padding: 0 20px; /* Increased padding for larger text */
+    padding: 0 20px;
     transition: color 0.3s;
-    font-size: var(--font-size-nav); /* Uses variable */
+    font-size: var(--font-size-nav); 
 }
 
 .nav-link:hover {
@@ -84,7 +131,7 @@ body {
     max-width: 1400px;
     width: 95%;
     margin: 40px auto; 
-    padding: 50px; /* Increased padding */
+    padding: 50px; 
     background-color: var(--card-background);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -92,14 +139,14 @@ body {
 
 h2 {
     color: var(--color-primary-dark);
-    font-size: var(--font-size-h2); /* Uses variable */
+    font-size: var(--font-size-h2);
     margin-bottom: 30px;
     border-bottom: 3px solid var(--border-color);
     padding-bottom: 15px;
 }
 
 h3 {
-    font-size: var(--font-size-h3); /* Uses variable */
+    font-size: var(--font-size-h3);
 }
 
 /* --- Profile Photo Section --- */
@@ -109,9 +156,9 @@ h3 {
 }
 
 .profile-photo {
-    width: 180px; /* Increased image size slightly to match text */
+    width: 180px; 
     height: 180px;
-    border-radius: 50%; /* Round image */
+    border-radius: 50%; 
     object-fit: cover;
     border: 6px solid var(--color-accent-medium); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -130,7 +177,7 @@ h3 {
 }
 
 .hero-section h1 {
-    font-size: var(--font-size-h1); /* Uses variable */
+    font-size: var(--font-size-h1);
     color: var(--color-primary-hero);
     text-shadow: 0 3px 6px rgba(0,0,0,0.6); 
     margin-bottom: 15px;
@@ -138,7 +185,7 @@ h3 {
 }
 
 .hero-section p {
-    font-size: var(--font-size-h2); /* Subtitle uses H2 size for impact */
+    font-size: var(--font-size-h2);
     color: var(--color-primary-hero);
     text-shadow: 0 3px 6px rgba(0,0,0,0.6);
     font-weight: 300;
@@ -153,7 +200,7 @@ h3 {
 
 .skill-category {
     flex: 1;
-    min-width: 300px; /* Increased min-width */
+    min-width: 300px;
 }
 
 .skill-category h3 {
@@ -198,7 +245,7 @@ h3 {
     display: inline-block;
     background-color: var(--color-secondary-warm); 
     color: white;
-    padding: 12px 20px; /* Larger button */
+    padding: 12px 20px; 
     text-decoration: none;
     border-radius: 6px;
     transition: background-color 0.3s;
@@ -214,7 +261,7 @@ h3 {
 .timeline {
     position: relative;
     padding: 20px 0;
-    border-left: 4px solid var(--border-color); /* Thicker line */
+    border-left: 4px solid var(--border-color);
     margin-left: 20px;
 }
 
@@ -226,9 +273,9 @@ h3 {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -14px; /* Adjusted for thicker line */
+    left: -14px; 
     top: 8px;
-    width: 24px; /* Larger dot */
+    width: 24px;
     height: 24px;
     background-color: var(--color-accent-medium); 
     border-radius: 50%;
@@ -297,7 +344,9 @@ h3 {
     font-weight: bold;
 }
 
-/* --- Media Queries (Responsive) --- */
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE & BURGER MENU)
+   ========================================= */
 @media (max-width: 768px) {
     :root {
         /* Slightly reduce global font sizes on mobile so it fits screen */
@@ -305,14 +354,64 @@ h3 {
         --font-size-h2: 2rem;
     }
 
+    /* 1. Navbar Layout */
     .navbar {
+        display: block; /* Switch to block to handle positioning */
+        padding: 15px 20px;
+        min-height: 70px;
+    }
+
+    /* 2. Show Burger Icon */
+    .nav-toggle-label {
+        display: block;
+    }
+
+    /* 3. Hide and Style Menu List */
+    .nav-links {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--card-background);
         flex-direction: column;
-        padding: 10px 0;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+        border-top: 1px solid var(--border-color);
     }
+    
     .nav-link {
-        padding: 12px 15px;
-        border-bottom: 1px solid var(--border-color);
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #f0f0f0;
     }
+
+    /* 4. LOGIC: If checkbox is checked, show menu */
+    .nav-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* 5. Burger Icon Animation */
+    /* Middle line becomes transparent */
+    .nav-toggle:checked ~ .nav-toggle-label span {
+        background: transparent;
+    }
+    /* Top line rotates */
+    .nav-toggle:checked ~ .nav-toggle-label span::before {
+        transform: rotate(45deg);
+        top: 0;
+        bottom: 0;
+    }
+    /* Bottom line rotates opposite way */
+    .nav-toggle:checked ~ .nav-toggle-label span::after {
+        transform: rotate(-45deg);
+        top: 0;
+        bottom: 0;
+    }
+
+    /* Mobile Content Adjustments */
     .content-section {
         width: 95%; 
         margin: 20px auto;
