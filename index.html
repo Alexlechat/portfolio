@@ -1,143 +1,359 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexandre Lefranc | Cybersécurité & Développement</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alexandre Lefranc | Cybersécurité & Développement</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <canvas id="matrix-canvas"></canvas>
+        <div class="noise"></div>
 
-    <header class="main-header">
-        <nav class="navbar">
-            
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            
-            <label for="nav-toggle" class="nav-toggle-label">
-                <span></span>
-            </label>
+        <!-- NAVIGATION -->
+        <nav class="nav" id="navbar">
+            <span class="nav-logo">AL<em>_</em>security</span>
 
-            <div class="nav-links">
-                <a href="#profil" class="nav-link">Profil</a>
-                <a href="#competences" class="nav-link">Compétences</a>
-                <a href="#projets" class="nav-link">Projets 42</a>
-                <a href="#parcours" class="nav-link">Parcours</a>
-                <a href="#formation" class="nav-link">Formation</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#profil">profil</a></li>
+                <li><a href="#competences">compétences</a></li>
+                <li><a href="#projets">projets_42</a></li>
+                <li><a href="#parcours">parcours</a></li>
+                <li><a href="#formation">formation</a></li>
+            </ul>
+
+            <div class="nav-burger" id="burger">
+                <span></span><span></span><span></span>
             </div>
         </nav>
-    </header>
 
-    <section id="hero" class="hero-section">
-        <h1>Alexandre Lefranc</h1>
-        <p>Étudiant Développeur | En reconversion vers la Cybersécurité</p>
-    </section>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-grid"></div>
+            <div class="hero-glow"></div>
+            <div class="hero-scan"></div>
 
-    <section id="profil" class="content-section">
-        <div class="photo-container">
-            <img src="image/pp.jpg" alt="Photo d'Alexandre Lefranc" class="profile-photo">
-        </div>
-        
-        <h2>Profil & Objectif</h2>
-        <div class="profile-content">
-            <p>Reconversion Stratégique : Après une carrière significative en Analyse Financière et une pause internationale de 5 ans, j'ai entrepris une reconversion complète en informatique à l'École 42 (Lyon).</p>
-            <p>Focus Cybersécurité : Étudiant Développeur, je développe mes compétences à travers des projets concrets, avec un fort intérêt pour la sécurité des systèmes et la protection des données. Mon parcours unique allie rigueur financière et technicité.</p>
-            <p>Soft Skills : Je mets à profit mon autonomie, ma gestion des priorités, mon sens des responsabilités et ma résolution de problèmes pour aborder les défis techniques.</p>
-        </div>
-    </section>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <div class="hero-badge-dot"></div>
+                    Disponible &nbsp;·&nbsp; Lyon &nbsp;·&nbsp; École 42
+                </div>
 
-    <section id="competences" class="content-section">
-        <h2>Compétences Techniques & Transversales</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>TECHNIQUE</h3>
-                <ul>
-                    <li>Langages : C, Bash</li>
-                    <li>OS : Linux</li>
-                    <li>Concepts : Architecture réseaux, Sécurité des systèmes</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>SOFT SKILLS</h3>
-                <ul>
-                    <li>Résolution de problèmes</li>
-                    <li>Travail en équipe</li>
-                    <li>Curiosité et apprentissage continu</li>
-                    <li>Autonomie et gestion de projets</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>LANGUES</h3>
-                <ul>
-                    <li>Anglais : Bilingue</li>
-                    <li>Espagnol : Intermédiaire</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+                <h1 class="hero-name">
+                    <span class="first">Alexandre</span><br>
+                    <span class="last">Lefranc</span>
+                </h1>
 
-    <section id="projets" class="content-section">
-        <h2>Projets 42</h2>
-        <p class="section-description">Présentation de projets significatifs réalisés à l'École 42.</p>
-        
-        <div class="project-card">
-            <h3>Projet X - Nom du Projet (C / Réseaux)</h3>
-            <p>Description courte du projet et des compétences acquises (ex : manipulation de sockets, gestion de la mémoire, etc.).</p>
-            <a href="#" target="_blank" class="github-link">Voir le code (GitHub)</a>
-        </div>
-        
-        <div class="project-card">
-            <h3>Projet Y - Nom du Projet (Scripts / Sécurité)</h3>
-            <p>Description courte du projet et de l'approche en matière de sécurité ou de scripting système.</p>
-            <a href="#" target="_blank" class="github-link">Voir le code (GitHub)</a>
-        </div>
-    </section>
+                <p class="hero-typed">
+                    <span id="typedText"></span><span class="cursor-blink"></span>
+                </p>
 
-    <section id="parcours" class="content-section">
-        <h2>Parcours Professionnel (Synthèse)</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <span class="timeline-date">2024 - En cours</span>
-                <span class="timeline-title">Étudiant Développeur - Architecture réseaux</span>
-                <span class="timeline-company">École 42</span>
+                <div class="hero-actions">
+                    <a href="#profil" class="btn btn-primary">Explorer le profil</a>
+                    <a href="mailto:alexandrelfrc@gmail.com" class="btn btn-ghost">Me contacter</a>
+                </div>
             </div>
-            
-            <div class="timeline-item">
-                <span class="timeline-date">2019 - 2024</span>
-                <span class="timeline-title">PAUSE PROFESSIONNELLE / Séjour International</span>
-                <span class="timeline-company">Voyage (Australie, N-Z, Colombie, Mexique)</span>
-                <p class="timeline-details">Expériences dans divers secteurs (minier, construction, pêche). Développement de l'autonomie et de la gestion de projet.</p>
-            </div>
-            
-            <div class="timeline-item">
-                <span class="timeline-date">2016 - 2018</span>
-                <span class="timeline-title">ANALYSTE FINANCIER | CDI</span>
-                <span class="timeline-company">Linagrain, Europe</span>
-                <p class="timeline-details">Responsable consolidation financière IFRS pour 15 pays. Liaison directe avec les directeurs de pays.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section id="formation" class="content-section">
-        <h2>Formation</h2>
-        <div class="education-list">
-            <div class="education-item">
-                <span class="education-date">2024 - En cours</span>
-                <span class="education-title">Développeur - Architecture réseaux</span>
-                <span class="education-school">École 42</span>
-            </div>
-            <div class="education-item">
-                <span class="education-date">2013 - 2016</span>
-                <span class="education-title">Master, management, Finance</span>
-                <span class="education-school">ESC Clermont-Ferrand</span>
-            </div>
-        </div>
-    </section>
 
-    <footer class="main-footer">
-        <p>Contact :</p>
-        <p>Email : <a href="mailto:alexandrelfrc@gmail.com">alexandrelfrc@gmail.com</a> | Tél. : 07 49 20 60 85 | Localisation : Lyon</p>
-        <p>Retrouvez-moi sur LinkedIn et GitHub.</p>
-    </footer>
+            <div class="hero-scroll-hint">
+                <span>SCROLL</span>
+                <div class="chevron"></div>
+            </div>
+        </section>
 
-</body>
+        <!-- PROFIL -->
+        <section id="profil">
+            <div class="container">
+                <div class="sec-head reveal">
+                    <div class="sec-cmd">exec profil.sh</div>
+                    <h2 class="sec-title">Profil <em>&</em> Objectif</h2>
+                </div>
+
+                <div class="profil-grid">
+                    <aside class="profil-aside reveal">
+                        <div class="photo-ring">
+                            <img src="image/pp.jpg" alt="Alexandre Lefranc">
+                        </div>
+                        <div class="profil-tag">École 42 · Lyon</div><br>
+                        <span class="profil-loc">Lyon, France</span>
+                    </aside>
+
+                    <div class="profil-cards">
+                        <div class="glass profil-card reveal">
+                            <div class="card-label">Reconversion Stratégique</div>
+                            <p>Après une carrière significative en Analyse Financière et une pause internationale de 5 ans, j'ai entrepris une reconversion complète en informatique à l'École 42 (Lyon).</p>
+                        </div>
+
+                        <div class="glass profil-card reveal">
+                            <div class="card-label">Focus Cybersécurité</div>
+                            <p>Étudiant Développeur, je développe mes compétences à travers des projets concrets, avec un fort intérêt pour la sécurité des systèmes et la protection des données. Mon parcours unique allie rigueur financière et technicité.</p>
+                        </div>
+
+                        <div class="glass profil-card reveal">
+                            <div class="card-label">Soft Skills</div>
+                            <p>Je mets à profit mon autonomie, ma gestion des priorités, mon sens des responsabilités et ma résolution de problèmes pour aborder les défis techniques.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPÉTENCES -->
+        <section id="competences">
+            <div class="container">
+                <div class="sec-head reveal">
+                    <div class="sec-cmd">scan skills.db</div>
+                    <h2 class="sec-title">Compétences <em>Techniques</em><br>& Transversales</h2>
+                </div>
+
+                <div class="skills-grid">
+
+                    <!-- Technique -->
+                    <div class="glass skill-card reveal">
+                        <div class="skill-card-head">
+                            <div class="skill-icon">⚙</div>
+                            <span class="skill-card-title">Technique</span>
+                        </div>
+                        <div class="tag-group">
+                            <div class="tag-group-label">// Langages</div>
+                            <div class="tags">
+                                <span class="tag tag-tech">C</span>
+                                <span class="tag tag-tech">Bash</span>
+                            </div>
+                        </div>
+                        <div class="tag-group">
+                            <div class="tag-group-label">// Système</div>
+                            <div class="tags">
+                                <span class="tag tag-tech">Linux</span>
+                            </div>
+                        </div>
+                        <div class="tag-group">
+                            <div class="tag-group-label">// Concepts</div>
+                            <div class="tags">
+                                <span class="tag tag-tech">Architecture réseaux</span>
+                                <span class="tag tag-tech">Sécurité des systèmes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="glass skill-card reveal">
+                        <div class="skill-card-head">
+                            <div class="skill-icon">◈</div>
+                            <span class="skill-card-title">Soft Skills</span>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row-head">
+                                <span class="skill-row-name">Résolution de problèmes</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="--w:0.92"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row-head">
+                                <span class="skill-row-name">Travail en équipe</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="--w:0.85"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row-head">
+                                <span class="skill-row-name">Curiosité & apprentissage</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="--w:0.95"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row-head">
+                                <span class="skill-row-name">Autonomie & gestion projet</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="--w:0.88"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- Langues -->
+                    <div class="glass skill-card reveal">
+                        <div class="skill-card-head">
+                            <div class="skill-icon">◎</div>
+                            <span class="skill-card-title">Langues</span>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row-head">
+                                <span class="tag tag-lang" style="font-size:10px; padding:2px 9px;">Anglais</span>
+                                <span style="font-family:var(--font-mono);font-size:9px;color:var(--text-muted);letter-spacing:2px;">BILINGUE</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill lang-bar" style="--w:1"></div></div>
+                        </div>
+                        <div class="skill-row" style="margin-top:20px;">
+                            <div class="skill-row-head">
+                                <span class="tag tag-lang" style="font-size:10px; padding:2px 9px;">Espagnol</span>
+                                <span style="font-family:var(--font-mono);font-size:9px;color:var(--text-muted);letter-spacing:2px;">INTERMÉDIAIRE</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill lang-bar" style="--w:0.55"></div></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETS -->
+        <section id="projets">
+            <div class="container">
+                <div class="sec-head reveal">
+                    <div class="sec-cmd">ls ./projects/42</div>
+                    <h2 class="sec-title">Projets <em>42</em></h2>
+                </div>
+
+                <p class="projects-intro reveal">// Présentation de projets significatifs réalisés à l'École 42.</p>
+
+                <div class="projects-grid">
+
+                    <div class="glass project-card reveal">
+                        <div class="term-bar">
+                            <div class="term-dot"></div>
+                            <div class="term-dot"></div>
+                            <div class="term-dot"></div>
+                            <span class="term-label">~/42/projet-x — bash</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="project-tag-item">C</span>
+                                <span class="project-tag-item">Réseaux</span>
+                            </div>
+                            <h3 class="project-title">Projet X — Nom du Projet</h3>
+                            <p class="project-desc">Description courte du projet et des compétences acquises (ex : manipulation de sockets, gestion de la mémoire, etc.).</p>
+                            <a href="#" target="_blank" class="project-link">Voir le code sur GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="glass project-card reveal">
+                        <div class="term-bar">
+                            <div class="term-dot"></div>
+                            <div class="term-dot"></div>
+                            <div class="term-dot"></div>
+                            <span class="term-label">~/42/projet-y — bash</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="project-tag-item">Scripts</span>
+                                <span class="project-tag-item">Sécurité</span>
+                            </div>
+                            <h3 class="project-title">Projet Y — Nom du Projet</h3>
+                            <p class="project-desc">Description courte du projet et de l'approche en matière de sécurité ou de scripting système.</p>
+                            <a href="#" target="_blank" class="project-link">Voir le code sur GitHub</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PARCOURS -->
+        <section id="parcours">
+            <div class="container">
+                <div class="sec-head reveal">
+                    <div class="sec-cmd">cat parcours.log</div>
+                    <h2 class="sec-title">Parcours <em>Professionnel</em></h2>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="tl-item reveal">
+                        <div class="glass tl-inner">
+                            <div class="tl-date">2024 — En cours</div>
+                            <div class="tl-role">Étudiant Développeur — Architecture Réseaux</div>
+                            <div class="tl-company">École 42 · Lyon</div>
+                        </div>
+                    </div>
+
+                    <div class="tl-item reveal">
+                        <div class="glass tl-inner">
+                            <div class="tl-date">2019 — 2024</div>
+                            <div class="tl-role">Pause Professionnelle / Séjour International</div>
+                            <div class="tl-company">Australie · Nouvelle-Zélande · Colombie · Mexique</div>
+                            <p class="tl-details">Expériences dans divers secteurs (minier, construction, pêche). Développement de l'autonomie et de la gestion de projet.</p>
+                        </div>
+                    </div>
+
+                    <div class="tl-item reveal">
+                        <div class="glass tl-inner">
+                            <div class="tl-date">2016 — 2018</div>
+                            <div class="tl-role">Analyste Financier · CDI</div>
+                            <div class="tl-company">Linagrain, Europe</div>
+                            <p class="tl-details">Responsable consolidation financière IFRS pour 15 pays. Liaison directe avec les directeurs de pays.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMATION -->
+        <section id="formation">
+            <div class="container">
+                <div class="sec-head reveal">
+                    <div class="sec-cmd">grep education records.db</div>
+                    <h2 class="sec-title">Forma<em>tion</em></h2>
+                </div>
+
+                <div class="formation-grid">
+
+                    <div class="glass form-card reveal">
+                        <div class="form-year">2024 — En cours</div>
+                        <div class="form-degree">Développeur<br>Architecture Réseaux</div>
+                        <div class="form-school">École 42 · Lyon</div>
+                    </div>
+
+                    <div class="glass form-card reveal">
+                        <div class="form-year">2013 — 2016</div>
+                        <div class="form-degree">Master<br>Management, Finance</div>
+                        <div class="form-school">ESC Clermont-Ferrand</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-wrap">
+                <div class="footer-top">
+                    <div>
+                        <div class="footer-name">Alexandre<br>Lefranc</div>
+                        <div class="footer-tagline">Cybersécurité · Développement · École 42</div>
+                    </div>
+
+                    <div>
+                        <ul class="footer-contacts">
+                            <li>
+                                <span class="c-label">Email</span>
+                                <a href="mailto:alexandrelfrc@gmail.com">alexandrelfrc@gmail.com</a>
+                            </li>
+                            <li>
+                                <span class="c-label">Tél</span>
+                                <span>07 49 20 60 85</span>
+                            </li>
+                            <li>
+                                <span class="c-label">Lieu</span>
+                                <span>Lyon, France</span>
+                            </li>
+                        </ul>
+
+                        <div class="footer-socials">
+                            <a href="#" class="social-btn">⌥ LinkedIn</a>
+                            <a href="#" class="social-btn">⌥ GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <span class="footer-copy">© 2025 Alexandre Lefranc — Tous droits réservés</span>
+                    <span class="footer-ready">// SYSTEM_READY_</span>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/script.js" defer></script>
+
+    </body>
 </html>
