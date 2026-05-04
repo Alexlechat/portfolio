@@ -49,7 +49,7 @@ export default function Hero() {
             className="mono text-[0.6rem] tracking-[0.25em] uppercase"
             style={{ color: "rgba(57,255,20,0.8)" }}
           >
-            Disponible · Stage 2026
+            Disponible · Stage 2025
           </span>
           <span className="mono text-[0.6rem] text-text-muted mx-2">·</span>
           <span className="mono text-[0.6rem] tracking-[0.15em] uppercase text-text-muted">
@@ -82,7 +82,7 @@ export default function Hero() {
         {/* Descriptor */}
         <div className="flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
           <p
-            className="mono text-base text-[#d8e4ee] leading-relaxed max-w-sm"
+            className="mono text-sm text-text-muted leading-relaxed max-w-sm"
             style={{ borderLeft: "2px solid rgba(0,212,255,0.3)", paddingLeft: "1rem" }}
           >
             Développeur — École 42 Lyon
@@ -123,7 +123,7 @@ export default function Hero() {
         </div>
 
         {/* CLI prompt — bottom of hero */}
-        <div className="mt-16 mono text-[0.65rem] text-text-muted flex items-center gap-1.5">
+        <div className="mt-16 mono text-[0.65rem] text-text-dim flex items-center gap-1.5">
           <span style={{ color: "rgba(0,212,255,0.35)" }}>$</span>
           <span>./init --profile cybersecurity-42lyon</span>
           <span

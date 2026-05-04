@@ -6,8 +6,8 @@
 :root {
   --bg: #050505;
   --text: #f0ede8;
-  --text-muted: #c0cdd8;
-  --text-dim: #8a9aaa;
+  --text-muted: #6b7a8a;
+  --text-dim: #2a3a4a;
   --cyan: #00d4ff;
   --cyan-low: rgba(0, 212, 255, 0.12);
   --orange: #ff6b35;
@@ -69,7 +69,7 @@ body::after {
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--cyan);
-    opacity: 0.85;
+    opacity: 0.6;
   }
 
   /* Section number prefix */

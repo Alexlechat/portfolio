@@ -35,7 +35,7 @@ export default function Nav() {
           className="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-[rgba(0,212,255,0.6)]
             hover:text-[#00d4ff] transition-colors"
         >
-          ALFRC
+          AP_
         </a>
 
         <ul className="hidden md:flex items-center gap-10">

@@ -7,53 +7,36 @@ import { ExternalLink, GitFork } from "lucide-react";
 const projects = [
   {
     id: "01",
-    name: "miniRT — Ray Tracer",
-    tech: "C · Raytracing · Mathématiques 3D",
-    status: "done",
-    statusLabel: "42 — Validé",
+    name: "Projet X — Réseaux",
+    tech: "C · Réseaux · Sockets",
+    status: "live",
+    statusLabel: "42 — En cours",
     color: "#ff6b35",
-    desc: "Moteur de ray tracing développé en C pur à l'École 42. Rendu 3D depuis zéro : gestion de la lumière, des ombres, des réflexions et de multiples primitives géométriques. Aucune bibliothèque graphique haut niveau.",
+    desc: "Projet réseau développé à l'École 42. Manipulation de sockets, gestion de la mémoire, implémentation de protocoles de communication. Approche bas niveau en C pur.",
     highlights: [
-      "Intersection rayon / sphère, plan, cylindre",
-      "Calcul de lumière ambiante, diffuse et spéculaire",
-      "Gestion mémoire manuelle sans fuite",
+      "Gestion mémoire manuelle (malloc/free)",
+      "Communication via sockets POSIX",
+      "Architecture réseau bas niveau",
     ],
-    stack: ["C", "MiniLibX", "Mathématiques 3D", "Linux"],
-    github: "https://github.com/Alexlechat/miniRT",
+    stack: ["C", "Réseaux", "Sockets", "Linux"],
+    github: "#",
     note: null,
   },
   {
     id: "02",
-    name: "webserv — Serveur HTTP",
-    tech: "C++ · HTTP/1.1 · Sockets",
-    status: "live",
-    statusLabel: "42 — En cours",
+    name: "Projet Y — Sécurité",
+    tech: "Bash · Scripts · Sécurité système",
+    status: "done",
+    statusLabel: "42 — Validé",
     color: "#00d4ff",
-    desc: "Implémentation d'un serveur HTTP/1.1 en C++ à l'École 42. Gestion des requêtes GET, POST, DELETE, parsing de la config Nginx-like, I/O multiplexé via epoll/select.",
+    desc: "Projet axé sécurité et scripting système. Automatisation, durcissement Linux, analyse des vecteurs d'attaque courants. Approche défensive de la sécurité des systèmes.",
     highlights: [
-      "Parsing complet des requêtes HTTP/1.1",
-      "I/O non-bloquant et multiplexage (epoll)",
-      "Configuration inspirée de Nginx",
+      "Scripting Bash avancé",
+      "Sécurisation de configurations Linux",
+      "Analyse et mitigation des vulnérabilités",
     ],
-    stack: ["C++", "HTTP/1.1", "Sockets", "Linux"],
+    stack: ["Bash", "Linux", "Sécurité", "Scripts"],
     github: "#",
-    note: "Repo privé — disponible sur demande",
-  },
-  {
-    id: "03",
-    name: "Projet Cyber — CTF & Pentest",
-    tech: "Python · Bash · Sécurité offensive",
-    status: "live",
-    statusLabel: "Perso — En cours",
-    color: "#39ff14",
-    desc: "Projet personnel centré sur la cybersécurité offensive. Participation à des CTF, développement de scripts d'exploitation, analyse de vulnérabilités et durcissement de systèmes Linux.",
-    highlights: [
-      "Exploitation de vulnérabilités (buffer overflow, privesc)",
-      "Scripting Python pour automatiser des attaques CTF",
-      "Analyse de binaires et reverse engineering basique",
-    ],
-    stack: ["Python", "Bash", "Linux", "CTF", "Pentest"],
-    github: "https://github.com/Alexlechat",
     note: null,
   },
 ];
@@ -144,7 +127,7 @@ export default function Projets() {
                 </div>
 
                 {/* Description */}
-                <p className="text-base text-[#d8e4ee] leading-relaxed mb-6 max-w-3xl">
+                <p className="text-sm text-text-muted leading-relaxed mb-6 max-w-3xl">
                   {p.desc}
                 </p>
 
@@ -158,7 +141,7 @@ export default function Projets() {
                       >
                         →
                       </span>
-                      <span className="text-base text-[#ddeaf5] font-medium">{h}</span>
+                      <span className="text-xs text-text-muted">{h}</span>
                     </li>
                   ))}
                 </ul>
@@ -169,10 +152,10 @@ export default function Projets() {
                     {p.stack.map((s) => (
                       <span
                         key={s}
-                        className="mono text-xs tracking-[0.12em] uppercase px-3 py-1 font-semibold"
+                        className="mono text-[0.58rem] tracking-[0.08em] uppercase px-2 py-0.5"
                         style={{
-                          border: `1px solid ${p.color}50`,
-                          color: p.color,
+                          border: "1px solid rgba(255,255,255,0.07)",
+                          color: "rgba(255,255,255,0.35)",
                         }}
                       >
                         {s}
@@ -210,8 +193,8 @@ export default function Projets() {
         </div>
 
         {/* Note */}
-        <p className="mono text-[0.65rem] text-text-muted mt-8">
-          <span style={{ color: "rgba(0,212,255,0.5)" }}>{"// "}</span>
+        <p className="mono text-[0.65rem] text-text-dim mt-8">
+          <span style={{ color: "rgba(0,212,255,0.3)" }}>{"// "}</span>
           D&apos;autres projets 42 en cours — liens GitHub à venir.
         </p>
       </div>

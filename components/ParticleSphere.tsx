@@ -71,6 +71,16 @@ function Sphere({ mouse }: { mouse: React.MutableRefObject<[number, number]> }) 
   );
 }
 
+/* ─── Equatorial ring ─────────────────────────────────── */
+function Ring() {
+  return (
+    <mesh rotation={[Math.PI / 2, 0, 0]}>
+      <torusGeometry args={[2.2, 0.003, 4, 180]} />
+      <meshBasicMaterial color="#00d4ff" transparent opacity={0.25} />
+    </mesh>
+  );
+}
+
 /* ─── Orbit ring (tilted) ─────────────────────────────── */
 function OrbitRing({ tilt, speed }: { tilt: number; speed: number }) {
   const ref = useRef<THREE.Mesh>(null);
@@ -111,6 +121,7 @@ export default function ParticleSphere() {
       style={{ background: "transparent" }}
     >
       <Sphere mouse={mouse} />
+      <Ring />
       <OrbitRing tilt={Math.PI / 4} speed={0.04} />
       <OrbitRing tilt={-Math.PI / 6} speed={-0.03} />
     </Canvas>
