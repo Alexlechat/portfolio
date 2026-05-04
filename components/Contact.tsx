@@ -14,8 +14,8 @@ const contacts = [
   {
     icon: GitFork,
     label: "GitHub",
-    value: "github.com/Alexlechat",
-    href: "https://github.com/Alexlechat",
+    value: "github.com/",
+    href: "https://github.com/",
   },
   {
     icon: Link,
@@ -61,14 +61,14 @@ export default function Contact() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <p className="text-base text-[#d8e4ee] leading-relaxed mb-8 max-w-sm">
+            <p className="text-sm text-text-muted leading-relaxed mb-8 max-w-sm">
               Disponible pour un stage en cybersécurité.
               Sécurité des systèmes, architecture réseaux, protection des données.
               Basé à Lyon — mobilité France entière.
             </p>
 
             <div
-              className="mono text-xs text-text-muted leading-relaxed p-4"
+              className="mono text-xs text-text-dim leading-relaxed p-4"
               style={{ border: "1px solid rgba(255,107,53,0.2)", borderLeft: "2px solid #ff6b35" }}
             >
               <span style={{ color: "#ff6b35" }}>PROFIL · </span>
@@ -91,7 +91,7 @@ export default function Contact() {
                 target={c.href.startsWith("http") ? "_blank" : undefined}
                 rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="flex items-center gap-4 p-4 group transition-all duration-200"
-                style={{ border: "1px solid rgba(255,255,255,0.14)" }}
+                style={{ border: "1px solid rgba(255,255,255,0.06)" }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,255,0.3)";
                 }}
@@ -99,12 +99,12 @@ export default function Contact() {
                   (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.06)";
                 }}
               >
-                <c.icon size={15} className="text-text-muted shrink-0 group-hover:text-[#00d4ff] transition-colors" />
+                <c.icon size={15} className="text-text-dim shrink-0 group-hover:text-[#00d4ff] transition-colors" />
                 <div>
-                  <p className="mono text-[0.6rem] tracking-[0.15em] uppercase text-text-muted mb-0.5">
+                  <p className="mono text-[0.6rem] tracking-[0.15em] uppercase text-text-dim mb-0.5">
                     {c.label}
                   </p>
-                  <p className="mono text-base text-[#d8e4ee] group-hover:text-white transition-colors">
+                  <p className="mono text-sm text-text-muted group-hover:text-[#f0ede8] transition-colors">
                     {c.value}
                   </p>
                 </div>

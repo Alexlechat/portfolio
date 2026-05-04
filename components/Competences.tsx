@@ -72,7 +72,7 @@ export default function Competences() {
                 />
                 <p
                   className="mono text-[0.6rem] tracking-[0.25em] uppercase"
-                  style={{ color: d.color }}
+                  style={{ color: d.color, opacity: 0.8 }}
                 >
                   {d.name}
                 </p>
@@ -81,11 +81,11 @@ export default function Competences() {
                 {d.items.map((item) => (
                   <span
                     key={item}
-                    className="mono text-sm tracking-[0.06em] px-3 py-1.5
-                      text-[#ddeaf5] font-semibold cursor-default
-                      hover:text-white transition-colors duration-200"
+                    className="mono text-[0.72rem] tracking-[0.04em] px-2.5 py-1
+                      text-text-muted cursor-default
+                      hover:text-text transition-colors duration-200"
                     style={{
-                      border: "1px solid rgba(255,255,255,0.28)",
+                      border: "1px solid rgba(255,255,255,0.07)",
                     }}
                   >
                     {item}
@@ -114,7 +114,7 @@ export default function Competences() {
               <span className="font-sans font-semibold text-sm text-[#f0ede8]">
                 {l.name}
               </span>
-              <span className="mono text-[0.62rem] text-text-muted">— {l.level}</span>
+              <span className="mono text-[0.62rem] text-text-dim">— {l.level}</span>
             </div>
           ))}
         </motion.div>

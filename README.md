@@ -1,54 +1,36 @@
-# Portfolio Professionnel - Alexandre Lefranc
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Un site portfolio professionnel responsive en une seule page avec défilement vertical, conçu pour mettre en valeur mon profil et mes compétences pour des postes en cybersécurité, algorithmie ou intelligence artificielle.
+## Getting Started
 
-## Caractéristiques
-
-- Design épuré et moderne
-- Site entièrement responsive (mobile et desktop)
-- Navigation fluide avec défilement doux
-- Barre de navigation fixe avec liens d'ancrage
-- Animations au défilement
-- Formulaire de contact
-
-## Structure du site
-
-- **Profil** : Présentation personnelle et professionnelle
-- **Compétences** : Langages, technologies, langues et soft skills
-- **Projets 42** : Galerie de projets réalisés à l'École 42
-- **Parcours professionnel** : Expérience professionnelle présentée sous forme de timeline
-- **Formation** : Parcours académique
-- **Centres d'intérêt** : Sports et voyages
-- **Contact** : Informations de contact et formulaire
-
-## Technologies utilisées
-
-- HTML5
-- CSS3 (avec variables, flexbox et grid)
-- JavaScript (vanilla)
-- Font Awesome pour les icônes
-- Google Fonts pour la typographie
-
-## Comment visualiser le site
-
-Ouvrez simplement le fichier `index.html` dans votre navigateur web préféré.
+First, run the development server:
 
 ```bash
-# Si vous avez Python installé, vous pouvez lancer un serveur local
-python -m http.server
-
-# Ou avec Node.js
-npx serve
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Personnalisation
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Pour personnaliser ce portfolio :
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-1. Modifiez le contenu dans `index.html`
-2. Ajustez les styles dans `css/style.css`
-3. Personnalisez les interactions dans `js/script.js`
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Licence
+## Learn More
 
-Ce projet est disponible sous licence MIT.
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
