@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Variables ───────────────────────────────────────── */
+:root {
+  --bg: #050505;
+  --text: #f0ede8;
+  --text-muted: #c0cdd8;
+  --text-dim: #8a9aaa;
+  --cyan: #00d4ff;
+  --cyan-low: rgba(0, 212, 255, 0.12);
+  --orange: #ff6b35;
+  --orange-low: rgba(255, 107, 53, 0.15);
+  --border: rgba(255, 255, 255, 0.07);
+  --border-hi: rgba(255, 255, 255, 0.15);
+  --font-mono: var(--font-geist-mono), "Courier New", monospace;
+  --font-sans: var(--font-satoshi), system-ui, sans-serif;
+}
+
+/* ─── Reset ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(0, 212, 255, 0.3); }
+
+/* ─── Selection ───────────────────────────────────────── */
+::selection {
+  background: rgba(0, 212, 255, 0.15);
+  color: #fff;
+}
+
+/* ─── Grain ───────────────────────────────────────────── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ─── Utilities ───────────────────────────────────────── */
+@layer utilities {
+  .mono {
+    font-family: var(--font-mono);
+  }
+
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    opacity: 0.85;
+  }
+
+  /* Section number prefix */
+  .sec-num {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: rgba(0, 212, 255, 0.4);
+  }
+
+  /* Horizontal rule */
+  .hr-rule {
+    border: none;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Glitch text — subtle displacement */
+  .glitch {
+    position: relative;
+  }
+  .glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(0 15%, 100% 15%, 100% 30%, 0 30%);
+    transform: translateX(-2px);
+    color: var(--cyan);
+    opacity: 0;
+    animation: glitchSlip 6s infinite;
+  }
+
+  /* Status dot */
+  .dot-live {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #39ff14;
+    box-shadow: 0 0 8px rgba(57, 255, 20, 0.9);
+    animation: dotPulse 2.5s ease-in-out infinite;
+  }
+
+  /* Hover depth card */
+  .card-depth {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+  }
+  .card-depth:hover {
+    transform: translateY(-4px) perspective(600px) rotateX(2deg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 212, 255, 0.05);
+  }
+}
+
+/* ─── Keyframes ───────────────────────────────────────── */
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes glitchSlip {
+  0%, 90%, 100% { opacity: 0; transform: translateX(-2px); }
+  91%, 94% { opacity: 0.4; transform: translateX(3px); }
+  95%, 99% { opacity: 0.4; transform: translateX(-3px); }
+}
+
+@keyframes scanSweep {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ─── Focus ───────────────────────────────────────────── */
+:focus-visible {
+  outline: 1px solid rgba(0, 212, 255, 0.5);
+  outline-offset: 3px;
+}
