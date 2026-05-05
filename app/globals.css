@@ -2,11 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Variables ───────────────────────────────────────── */
-:root {
+/* ─── Variables — Dark (default) ──────────────────────── */
+:root,
+[data-theme="dark"] {
   --bg: #050505;
+  --bg-section: #080808;
+  --bg-card: #0d0d0d;
+  --bg-nav: rgba(5, 5, 5, 0.85);
   --text: #f0ede8;
-  --text-muted: #6b7a8a;
+  --text-muted: #8fa0b0;
   --text-dim: #2a3a4a;
   --cyan: #00d4ff;
   --cyan-low: rgba(0, 212, 255, 0.12);
@@ -14,8 +18,79 @@
   --orange-low: rgba(255, 107, 53, 0.15);
   --border: rgba(255, 255, 255, 0.07);
   --border-hi: rgba(255, 255, 255, 0.15);
+  --accent-left: rgba(255, 255, 255, 0.07);
   --font-mono: var(--font-geist-mono), "Courier New", monospace;
   --font-sans: var(--font-satoshi), system-ui, sans-serif;
+}
+
+/* ─── Variables — Light ────────────────────────────────── */
+[data-theme="light"] {
+  --bg: #eeeef5;
+  --bg-section: #e6e6f0;
+  --bg-card: #dcdce8;
+  --bg-nav: rgba(238, 238, 245, 0.9);
+  --text: #0d0d1a;
+  --text-muted: #3d4a60;
+  --text-dim: #7a8a9c;
+  --cyan: #0077aa;
+  --cyan-low: rgba(0, 119, 170, 0.1);
+  --orange: #cc5522;
+  --orange-low: rgba(204, 85, 34, 0.12);
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hi: rgba(0, 0, 0, 0.15);
+  --accent-left: rgba(0, 0, 0, 0.07);
+}
+
+/* ─── Light mode overrides for inline styles ──────────── */
+[data-theme="light"] body {
+  background: var(--bg);
+  color: var(--text);
+}
+[data-theme="light"] main {
+  background: var(--bg) !important;
+}
+/* Sections with hard-coded dark bg */
+[data-theme="light"] section {
+  background: var(--bg-section) !important;
+}
+/* Project cards */
+[data-theme="light"] article {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+/* Nav */
+[data-theme="light"] header.scrolled-nav,
+[data-theme="light"] header > nav {
+  background: var(--bg-nav);
+}
+/* Kill the noise grain in light mode */
+[data-theme="light"] body::after {
+  opacity: 0.015;
+}
+/* Scrollbar */
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(0, 119, 170, 0.35);
+}
+/* Nav mobile menu bg */
+[data-theme="light"] header div[style] {
+  background: var(--bg-nav) !important;
+}
+/* Section contact + projets inline bg */
+[data-theme="light"] section[style*="background"] {
+  background: var(--bg-section) !important;
+}
+/* Project cards inline bg */
+[data-theme="light"] article[style] {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+/* Hero section bg */
+[data-theme="light"] .min-h-screen {
+  background: var(--bg) !important;
+}
+/* Scroll hint line */
+[data-theme="light"] .opacity-20 div[style] {
+  background: linear-gradient(to bottom, transparent, var(--cyan)) !important;
 }
 
 /* ─── Reset ───────────────────────────────────────────── */
@@ -30,7 +105,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -65,11 +140,11 @@ body::after {
 
   .label {
     font-family: var(--font-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.25em;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--cyan);
-    opacity: 0.6;
+    opacity: 0.7;
   }
 
   /* Section number prefix */

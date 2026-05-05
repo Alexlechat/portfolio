@@ -14,8 +14,8 @@ const contacts = [
   {
     icon: GitFork,
     label: "GitHub",
-    value: "github.com/",
-    href: "https://github.com/",
+    value: "github.com/Alexlechat",
+    href: "https://github.com/Alexlechat",
   },
   {
     icon: Link,
@@ -61,14 +61,14 @@ export default function Contact() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <p className="text-sm text-text-muted leading-relaxed mb-8 max-w-sm">
+            <p className="text-base text-text-muted leading-relaxed mb-8 max-w-sm">
               Disponible pour un stage en cybersécurité.
               Sécurité des systèmes, architecture réseaux, protection des données.
               Basé à Lyon — mobilité France entière.
             </p>
 
             <div
-              className="mono text-xs text-text-dim leading-relaxed p-4"
+              className="mono text-sm text-text-dim leading-relaxed p-4"
               style={{ border: "1px solid rgba(255,107,53,0.2)", borderLeft: "2px solid #ff6b35" }}
             >
               <span style={{ color: "#ff6b35" }}>PROFIL · </span>
@@ -101,10 +101,10 @@ export default function Contact() {
               >
                 <c.icon size={15} className="text-text-dim shrink-0 group-hover:text-[#00d4ff] transition-colors" />
                 <div>
-                  <p className="mono text-[0.6rem] tracking-[0.15em] uppercase text-text-dim mb-0.5">
+                  <p className="mono text-xs tracking-[0.12em] uppercase text-text-dim mb-0.5">
                     {c.label}
                   </p>
-                  <p className="mono text-sm text-text-muted group-hover:text-[#f0ede8] transition-colors">
+                  <p className="mono text-base text-text-muted group-hover:text-[#f0ede8] transition-colors">
                     {c.value}
                   </p>
                 </div>

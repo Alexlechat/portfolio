@@ -9,19 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#050505",
+        bg: "var(--bg)",
         text: {
-          DEFAULT: "#f0ede8",
-          muted: "#6b7a8a",
-          dim: "#2a3a4a",
+          DEFAULT: "var(--text)",
+          muted: "var(--text-muted)",
+          dim: "var(--text-dim)",
         },
         cyan: {
-          DEFAULT: "#00d4ff",
-          low: "rgba(0,212,255,0.12)",
+          DEFAULT: "var(--cyan)",
+          low: "var(--cyan-low)",
         },
         orange: {
-          DEFAULT: "#ff6b35",
-          low: "rgba(255,107,53,0.15)",
+          DEFAULT: "var(--orange)",
+          low: "var(--orange-low)",
         },
       },
       fontFamily: {

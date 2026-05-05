@@ -13,7 +13,6 @@ const links = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", h, { passive: true });
@@ -25,17 +24,20 @@ export default function Nav() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-400",
         scrolled
-          ? "bg-[#050505]/85 backdrop-blur-md border-b border-[rgba(255,255,255,0.05)]"
+          ? "backdrop-blur-md border-b border-[rgba(255,255,255,0.05)]"
           : "bg-transparent"
       )}
+      style={scrolled ? { background: "var(--bg-nav)" } : undefined}
     >
-      <nav className="max-w-7xl mx-auto px-6 md:px-12 h-14 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         <a
           href="#"
-          className="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-[rgba(0,212,255,0.6)]
-            hover:text-[#00d4ff] transition-colors"
+          className="font-mono text-sm tracking-[0.25em] uppercase transition-colors"
+          style={{ color: "var(--cyan)", opacity: 0.8 }}
+          onMouseEnter={e => ((e.currentTarget as HTMLElement).style.opacity = "1")}
+          onMouseLeave={e => ((e.currentTarget as HTMLElement).style.opacity = "0.8")}
         >
-          AP_
+          ALFRC_
         </a>
 
         <ul className="hidden md:flex items-center gap-10">
@@ -43,8 +45,8 @@ export default function Nav() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="font-mono text-[0.62rem] tracking-[0.2em] uppercase
-                  text-text-muted hover:text-[#f0ede8] transition-colors duration-200"
+                className="font-mono text-xs tracking-[0.18em] uppercase
+                  text-text-muted hover:text-text transition-colors duration-200"
               >
                 {l.label}
               </a>
@@ -53,7 +55,7 @@ export default function Nav() {
         </ul>
 
         <button
-          className="md:hidden mono text-[0.62rem] text-text-muted hover:text-[#f0ede8] transition-colors"
+          className="md:hidden mono text-xs text-text-muted hover:text-text transition-colors"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -63,16 +65,16 @@ export default function Nav() {
 
       {open && (
         <div
-          className="md:hidden border-b border-[rgba(255,255,255,0.05)]"
-          style={{ background: "#050505" }}
+          className="md:hidden border-b"
+          style={{ background: "var(--bg-nav)", borderColor: "var(--border)" }}
         >
-          <ul className="flex flex-col px-6 py-4 gap-4">
+          <ul className="flex flex-col px-6 py-5 gap-5">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="mono text-[0.62rem] tracking-[0.2em] uppercase text-text-muted
-                    hover:text-[#f0ede8] transition-colors"
+                  className="mono text-xs tracking-[0.18em] uppercase text-text-muted
+                    hover:text-text transition-colors"
                   onClick={() => setOpen(false)}
                 >
                   {l.label}

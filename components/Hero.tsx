@@ -34,7 +34,7 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 70% 70% at 50% 50%, transparent 30%, #050505 80%)",
+              "radial-gradient(ellipse 70% 70% at 50% 50%, transparent 30%, var(--bg) 80%)",
           }}
         />
       </div>
@@ -46,13 +46,13 @@ export default function Hero() {
         <div className="flex items-center gap-2.5 mb-10">
           <span className="dot-live" />
           <span
-            className="mono text-[0.6rem] tracking-[0.25em] uppercase"
+            className="mono text-xs tracking-[0.2em] uppercase"
             style={{ color: "rgba(57,255,20,0.8)" }}
           >
-            Disponible · Stage 2025
+            Disponible · Stage 2026
           </span>
           <span className="mono text-[0.6rem] text-text-muted mx-2">·</span>
-          <span className="mono text-[0.6rem] tracking-[0.15em] uppercase text-text-muted">
+          <span className="mono text-xs tracking-[0.12em] uppercase text-text-muted">
             Lyon · École 42
           </span>
         </div>
@@ -82,7 +82,7 @@ export default function Hero() {
         {/* Descriptor */}
         <div className="flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
           <p
-            className="mono text-sm text-text-muted leading-relaxed max-w-sm"
+            className="mono text-base text-text-muted leading-relaxed max-w-sm"
             style={{ borderLeft: "2px solid rgba(0,212,255,0.3)", paddingLeft: "1rem" }}
           >
             Développeur — École 42 Lyon
@@ -99,7 +99,7 @@ export default function Hero() {
             <a
               href="#projets"
               className="inline-flex items-center gap-2 px-5 py-2.5
-                font-mono text-[0.7rem] tracking-[0.15em] uppercase
+                font-mono text-xs tracking-[0.12em] uppercase
                 bg-[rgba(0,212,255,0.1)] text-[#00d4ff]
                 border border-[rgba(0,212,255,0.35)]
                 hover:bg-[rgba(0,212,255,0.18)] hover:border-[rgba(0,212,255,0.6)]
@@ -111,7 +111,7 @@ export default function Hero() {
             <a
               href="#contact"
               className="inline-flex items-center gap-2 px-5 py-2.5
-                font-mono text-[0.7rem] tracking-[0.15em] uppercase
+                font-mono text-xs tracking-[0.12em] uppercase
                 text-text-muted
                 border border-[rgba(255,255,255,0.1)]
                 hover:text-text hover:border-[rgba(255,255,255,0.25)]
@@ -123,7 +123,7 @@ export default function Hero() {
         </div>
 
         {/* CLI prompt — bottom of hero */}
-        <div className="mt-16 mono text-[0.65rem] text-text-dim flex items-center gap-1.5">
+        <div className="mt-16 mono text-xs text-text-dim flex items-center gap-1.5">
           <span style={{ color: "rgba(0,212,255,0.35)" }}>$</span>
           <span>./init --profile cybersecurity-42lyon</span>
           <span

@@ -12,7 +12,7 @@ function Sphere({ mouse }: { mouse: React.MutableRefObject<[number, number]> }) 
   const { positions, sizes } = useMemo(() => {
     const pos = new Float32Array(COUNT * 3);
     const sz = new Float32Array(COUNT);
-    const phi = Math.PI * (Math.sqrt(5) - 1); // golden angle
+    const phi = Math.PI * (Math.sqrt(5) - 1);
 
     for (let i = 0; i < COUNT; i++) {
       const y = 1 - (i / (COUNT - 1)) * 2;
@@ -23,7 +23,6 @@ function Sphere({ mouse }: { mouse: React.MutableRefObject<[number, number]> }) 
       pos[i * 3 + 1] = y * 2.2;
       pos[i * 3 + 2] = Math.sin(theta) * r * 2.2;
 
-      // vary point sizes slightly
       sz[i] = 0.008 + Math.random() * 0.012;
     }
     return { positions: pos, sizes: sz };
@@ -33,11 +32,9 @@ function Sphere({ mouse }: { mouse: React.MutableRefObject<[number, number]> }) 
     if (!ref.current) return;
     const t = state.clock.elapsedTime;
 
-    // base rotation
     ref.current.rotation.y = t * 0.06;
     ref.current.rotation.x = Math.sin(t * 0.04) * 0.12;
 
-    // mouse parallax — subtle tilt
     const [mx, my] = mouse.current;
     ref.current.rotation.y += mx * 0.3;
     ref.current.rotation.x += my * 0.15;
@@ -71,18 +68,13 @@ function Sphere({ mouse }: { mouse: React.MutableRefObject<[number, number]> }) 
   );
 }
 
-/* ─── Equatorial ring ─────────────────────────────────── */
-function Ring() {
-  return (
-    <mesh rotation={[Math.PI / 2, 0, 0]}>
-      <torusGeometry args={[2.2, 0.003, 4, 180]} />
-      <meshBasicMaterial color="#00d4ff" transparent opacity={0.25} />
-    </mesh>
-  );
-}
-
 /* ─── Orbit ring (tilted) ─────────────────────────────── */
-function OrbitRing({ tilt, speed }: { tilt: number; speed: number }) {
+function OrbitRing({ tilt, speed, color = "#00d4ff", opacity = 0.12 }: {
+  tilt: number;
+  speed: number;
+  color?: string;
+  opacity?: number;
+}) {
   const ref = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
@@ -93,7 +85,7 @@ function OrbitRing({ tilt, speed }: { tilt: number; speed: number }) {
   return (
     <mesh ref={ref} rotation={[tilt, 0, 0]}>
       <torusGeometry args={[2.2, 0.002, 4, 120]} />
-      <meshBasicMaterial color="#00d4ff" transparent opacity={0.12} />
+      <meshBasicMaterial color={color} transparent opacity={opacity} />
     </mesh>
   );
 }
@@ -121,9 +113,9 @@ export default function ParticleSphere() {
       style={{ background: "transparent" }}
     >
       <Sphere mouse={mouse} />
-      <Ring />
-      <OrbitRing tilt={Math.PI / 4} speed={0.04} />
-      <OrbitRing tilt={-Math.PI / 6} speed={-0.03} />
+      <OrbitRing tilt={Math.PI / 4}   speed={0.04} />
+      <OrbitRing tilt={-Math.PI / 6}  speed={-0.03} />
+      <OrbitRing tilt={Math.PI / 2.5} speed={0.02} color="#a78bfa" opacity={0.14} />
     </Canvas>
   );
 }

@@ -24,6 +24,11 @@ const domains = [
     items: ["Git", "Linux", "Vim", "Bash scripts", "42 Norm"],
     color: "rgba(255,255,255,0.3)",
   },
+  {
+    name: "CTF & Plateformes",
+    items: ["TryHackMe", "HackTheBox", "CTF Challenges", "Wireshark", "Nmap", "Burp Suite"],
+    color: "#a78bfa",
+  },
 ];
 
 const langs = [
@@ -71,7 +76,7 @@ export default function Competences() {
                   style={{ background: d.color }}
                 />
                 <p
-                  className="mono text-[0.6rem] tracking-[0.25em] uppercase"
+                  className="mono text-xs tracking-[0.2em] uppercase"
                   style={{ color: d.color, opacity: 0.8 }}
                 >
                   {d.name}
@@ -81,7 +86,7 @@ export default function Competences() {
                 {d.items.map((item) => (
                   <span
                     key={item}
-                    className="mono text-[0.72rem] tracking-[0.04em] px-2.5 py-1
+                    className="mono text-sm tracking-[0.03em] px-3 py-1.5
                       text-text-muted cursor-default
                       hover:text-text transition-colors duration-200"
                     style={{
@@ -111,10 +116,10 @@ export default function Competences() {
         >
           {langs.map((l) => (
             <div key={l.name} className="flex items-baseline gap-2.5">
-              <span className="font-sans font-semibold text-sm text-[#f0ede8]">
+              <span className="font-sans font-semibold text-base text-[#f0ede8]">
                 {l.name}
               </span>
-              <span className="mono text-[0.62rem] text-text-dim">— {l.level}</span>
+              <span className="mono text-xs text-text-dim">— {l.level}</span>
             </div>
           ))}
         </motion.div>

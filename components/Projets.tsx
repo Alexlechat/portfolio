@@ -7,36 +7,53 @@ import { ExternalLink, GitFork } from "lucide-react";
 const projects = [
   {
     id: "01",
-    name: "Projet X — Réseaux",
-    tech: "C · Réseaux · Sockets",
-    status: "live",
-    statusLabel: "42 — En cours",
+    name: "webserv",
+    tech: "C++ · HTTP/1.1 · Sockets",
+    status: "done",
+    statusLabel: "42 — Validé",
     color: "#ff6b35",
-    desc: "Projet réseau développé à l'École 42. Manipulation de sockets, gestion de la mémoire, implémentation de protocoles de communication. Approche bas niveau en C pur.",
+    desc: "Serveur HTTP/1.1 from scratch en C++. Gestion des méthodes GET/POST/DELETE, configuration multi-serveur/vhost, I/O multiplexing via select/poll, upload de fichiers et exécution CGI.",
     highlights: [
-      "Gestion mémoire manuelle (malloc/free)",
-      "Communication via sockets POSIX",
-      "Architecture réseau bas niveau",
+      "Parsing de requêtes HTTP/1.1 conforme RFC",
+      "Multiplexage I/O non-bloquant (poll)",
+      "Support CGI et upload de fichiers",
     ],
-    stack: ["C", "Réseaux", "Sockets", "Linux"],
-    github: "#",
+    stack: ["C++", "HTTP", "Sockets", "Linux", "CGI"],
+    github: "https://github.com/Alexlechat",
     note: null,
   },
   {
     id: "02",
-    name: "Projet Y — Sécurité",
-    tech: "Bash · Scripts · Sécurité système",
+    name: "miniRT",
+    tech: "C · Ray Tracing · Mathématiques 3D",
     status: "done",
     statusLabel: "42 — Validé",
     color: "#00d4ff",
-    desc: "Projet axé sécurité et scripting système. Automatisation, durcissement Linux, analyse des vecteurs d'attaque courants. Approche défensive de la sécurité des systèmes.",
+    desc: "Ray tracer from scratch en C. Rendu de scènes 3D avec gestion des lumières, ombres, réflexions et formes géométriques (sphères, cylindres, plans). Calculs vectoriels et matriciels manuels.",
     highlights: [
-      "Scripting Bash avancé",
-      "Sécurisation de configurations Linux",
-      "Analyse et mitigation des vulnérabilités",
+      "Algorithme de lancer de rayons complet",
+      "Gestion des lumières et ombres portées",
+      "Formes géométriques paramétriques",
     ],
-    stack: ["Bash", "Linux", "Sécurité", "Scripts"],
-    github: "#",
+    stack: ["C", "Ray Tracing", "Maths 3D", "MiniLibX"],
+    github: "https://github.com/Alexlechat",
+    note: null,
+  },
+  {
+    id: "03",
+    name: "Projets Cybersécurité",
+    tech: "Python · Bash · CTF · Pentest",
+    status: "live",
+    statusLabel: "Perso — En cours",
+    color: "#a78bfa",
+    desc: "Ensemble de projets personnels autour de la cybersécurité : CTF (Capture The Flag), scripts d'analyse réseau, exploitation de vulnérabilités dans des environnements contrôlés, et veille sur les nouvelles menaces.",
+    highlights: [
+      "CTF — challenges web, reverse, pwn",
+      "Scripts d'analyse et de scan réseau",
+      "Environnements de lab isolés (VMs, Docker)",
+    ],
+    stack: ["Python", "Bash", "Nmap", "Wireshark", "CTF"],
+    github: "https://github.com/Alexlechat",
     note: null,
   },
 ];
@@ -95,7 +112,7 @@ export default function Projets() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
                   <div>
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="mono text-[0.6rem] text-text-dim">{p.id}</span>
+                      <span className="mono text-xs text-text-dim">{p.id}</span>
                       <h3
                         className="font-sans font-black text-[#f0ede8] leading-none"
                         style={{ fontSize: "clamp(1.3rem,3vw,2rem)" }}
@@ -103,7 +120,7 @@ export default function Projets() {
                         {p.name}
                       </h3>
                     </div>
-                    <p className="mono text-xs" style={{ color: p.color, opacity: 0.8 }}>
+                    <p className="mono text-sm" style={{ color: p.color, opacity: 0.9 }}>
                       {p.tech}
                     </p>
                   </div>
@@ -118,7 +135,7 @@ export default function Projets() {
                       }}
                     />
                     <span
-                      className="mono text-[0.6rem] tracking-[0.15em] uppercase"
+                      className="mono text-xs tracking-[0.12em] uppercase"
                       style={{ color: p.color }}
                     >
                       {p.statusLabel}
@@ -127,7 +144,7 @@ export default function Projets() {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-text-muted leading-relaxed mb-6 max-w-3xl">
+                <p className="text-base text-text-muted leading-relaxed mb-6 max-w-3xl">
                   {p.desc}
                 </p>
 
@@ -136,12 +153,12 @@ export default function Projets() {
                   {p.highlights.map((h) => (
                     <li key={h} className="flex items-start gap-2.5">
                       <span
-                        className="mono text-[0.6rem] shrink-0 mt-0.5"
+                        className="mono text-sm shrink-0 mt-0.5"
                         style={{ color: p.color }}
                       >
                         →
                       </span>
-                      <span className="text-xs text-text-muted">{h}</span>
+                      <span className="text-sm text-text-muted">{h}</span>
                     </li>
                   ))}
                 </ul>
@@ -152,7 +169,7 @@ export default function Projets() {
                     {p.stack.map((s) => (
                       <span
                         key={s}
-                        className="mono text-[0.58rem] tracking-[0.08em] uppercase px-2 py-0.5"
+                        className="mono text-xs tracking-[0.06em] uppercase px-2.5 py-1"
                         style={{
                           border: "1px solid rgba(255,255,255,0.07)",
                           color: "rgba(255,255,255,0.35)",
@@ -170,8 +187,8 @@ export default function Projets() {
                           href={p.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 mono text-[0.62rem]
-                            tracking-[0.1em] uppercase text-text-muted hover:text-[#00d4ff]
+                          className="inline-flex items-center gap-1.5 mono text-xs
+                            tracking-[0.08em] uppercase text-text-muted hover:text-[#00d4ff]
                             transition-colors"
                         >
                           <GitFork size={11} />
@@ -193,7 +210,7 @@ export default function Projets() {
         </div>
 
         {/* Note */}
-        <p className="mono text-[0.65rem] text-text-dim mt-8">
+        <p className="mono text-sm text-text-dim mt-8">
           <span style={{ color: "rgba(0,212,255,0.3)" }}>{"// "}</span>
           D&apos;autres projets 42 en cours — liens GitHub à venir.
         </p>

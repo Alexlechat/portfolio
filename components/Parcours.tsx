@@ -26,14 +26,14 @@ const entries = [
     subtitle: "Linagrain, Europe — CDI",
     tags: ["IFRS", "Consolidation financière", "15 pays"],
     desc: "Responsable consolidation financière IFRS pour 15 pays. Liaison directe avec les directeurs de pays. Rigueur analytique et gestion de données complexes à grande échelle.",
-    accent: "dim",
+    accent: "violet",
   },
 ];
 
 const accentColor: Record<string, string> = {
   cyan: "#00d4ff",
   orange: "#ff6b35",
-  dim: "rgba(255,255,255,0.15)",
+  violet: "#a78bfa",
 };
 
 export default function Parcours() {
@@ -58,7 +58,7 @@ export default function Parcours() {
           >
             Trajectoire
           </h2>
-          <p className="mono text-sm text-text-muted mt-4 max-w-md">
+          <p className="mono text-base text-text-muted mt-4 max-w-md">
             Rigueur analytique, expérience terrain internationale, reconversion technique complète à 42 Lyon.
           </p>
         </motion.div>
@@ -80,7 +80,10 @@ export default function Parcours() {
             >
               {/* Year column */}
               <div className="flex flex-col">
-                <span className="mono text-[0.65rem] tracking-[0.2em] text-text-muted mb-1">
+                <span
+                  className="mono text-sm tracking-[0.15em] font-bold mb-1"
+                  style={{ color: accentColor[e.accent] }}
+                >
                   {e.year}
                 </span>
                 {/* Accent dot */}
@@ -97,14 +100,14 @@ export default function Parcours() {
               </div>
 
               {/* Content */}
-              <div className={e.accent === "dim" ? "opacity-40" : ""}>
+              <div>
                 <h3
                   className="font-sans font-black text-[#f0ede8] leading-tight mb-1"
                   style={{ fontSize: "clamp(1.5rem,3vw,2.2rem)" }}
                 >
                   {e.title}
                 </h3>
-                <p className="mono text-xs text-text-muted mb-4">
+                <p className="mono text-sm text-text-muted mb-4">
                   {e.subtitle}
                 </p>
 
@@ -113,7 +116,7 @@ export default function Parcours() {
                     {e.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="mono text-[0.6rem] tracking-[0.1em] uppercase px-2 py-0.5"
+                        className="mono text-xs tracking-[0.08em] uppercase px-2.5 py-1"
                         style={{
                           border: `1px solid ${accentColor[e.accent]}40`,
                           color: accentColor[e.accent],
@@ -126,7 +129,7 @@ export default function Parcours() {
                   </div>
                 )}
 
-                <p className="text-sm text-text-muted leading-relaxed max-w-xl">
+                <p className="text-base text-text-muted leading-relaxed max-w-xl">
                   {e.desc}
                 </p>
               </div>
@@ -139,7 +142,7 @@ export default function Parcours() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="mono text-xs text-text-dim mt-10 max-w-lg"
+          className="mono text-sm text-text-dim mt-10 max-w-lg"
           style={{ borderLeft: "2px solid rgba(255,107,53,0.3)", paddingLeft: "1rem" }}
         >
           Profil ciblé : cybersécurité, sécurité des systèmes, architecture réseaux.
