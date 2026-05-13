@@ -63,14 +63,14 @@ export default function Hero() {
         >
           <span
             className="block text-[#f0ede8]"
-            style={{ fontSize: "clamp(4.5rem,12vw,12rem)" }}
+            style={{ fontSize: "clamp(2.8rem,12vw,12rem)" }}
           >
             ALEXANDRE
           </span>
           <span
             className="block"
             style={{
-              fontSize: "clamp(4.5rem,12vw,12rem)",
+              fontSize: "clamp(2.8rem,12vw,12rem)",
               WebkitTextStroke: "1.5px rgba(0,212,255,0.7)",
               color: "transparent",
             }}
